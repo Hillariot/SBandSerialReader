@@ -65,6 +65,7 @@
     <Compile Include="RegistersManagerUI.cs" />
     <Compile Include="RegMap.cs" />
     <Compile Include="SerialReader.cs" />
+    <Compile Include="TcpServer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

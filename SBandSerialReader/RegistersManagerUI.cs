@@ -88,21 +88,64 @@ namespace SBandSerialReader
                             hexValueControls[i],
                             varDataControls[i]);
                         break;
-                    case (int)RegMap.SpreadingFactor:
+                    case (int)RegMap.LoraSpreadingFactor:
                         setSpreadingFactor(regs[i - startReg],
                         hexValueControls[i],
                         varDataControls[i]);
                         break;
-                    case (int)RegMap.CodingRate:
+                    case (int)RegMap.LoraCodingRate:
                         setCodingRate(regs[i - startReg],
                         hexValueControls[i],
                         varDataControls[i]);
                         break;
-                    case (int)RegMap.Bandwidth:
+                    case (int)RegMap.LoraBandwidth:
                         setBandwidth(regs[i - startReg],
                         hexValueControls[i],
                         varDataControls[i]);
                         break;
+
+
+                    case (int)RegMap.BitRate3:
+                        SetFrequency(ArrayExtensions.SubArray(regs, i - startReg - 2, 3),
+                                    ArrayExtensions.SubArray(hexValueControls, i - 2, 3),
+                                    varDataControls[i]);
+                        break;
+                    case (int)RegMap.FskFdev:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.FskBandwidth:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.FskPreambleLength:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.FskGaussFilter:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.PioDir:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.PioOut:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+                    case (int)RegMap.PioIn:
+                        setBandwidth(regs[i - startReg],
+                        hexValueControls[i],
+                        varDataControls[i]);
+                        break;
+
                     default:
                         break;
                 }
@@ -111,7 +154,7 @@ namespace SBandSerialReader
 
         private static void setPower(byte data, Control textBoxHexValues, Control textBoxVarDatas)
         {
-            int power = (int) data - 10;
+            sbyte power = unchecked((sbyte)data);
 
             textBoxHexValues.Text = DataConverter.ByteToStringHEX(data);
             textBoxVarDatas.Text = power.ToString();
@@ -122,23 +165,29 @@ namespace SBandSerialReader
             int selectedIndex = -1;
             switch (data)
             {
-                case 0x07:
+                case 0x05:
                     selectedIndex = 0;
                     break;
-                case 0x08:
+                case 0x06:
                     selectedIndex = 1;
                     break;
-                case 0x09:
+                case 0x07:
                     selectedIndex = 2;
                     break;
-                case 0x0A:
+                case 0x08:
                     selectedIndex = 3;
                     break;
-                case 0x0B:
+                case 0x09:
                     selectedIndex = 4;
                     break;
-                case 0x0C:
+                case 0x0A:
                     selectedIndex = 5;
+                    break;
+                case 0x0B:
+                    selectedIndex = 6;
+                    break;
+                case 0x0C:
+                    selectedIndex = 7;
                     break;
             }
 
@@ -161,16 +210,16 @@ namespace SBandSerialReader
             int selectedIndex = -1;
             switch (data)
             {
-                case 0x05:
+                case 0x01:
                     selectedIndex = 0;
                     break;
-                case 0x06:
+                case 0x02:
                     selectedIndex = 1;
                     break;
-                case 0x07:
+                case 0x03:
                     selectedIndex = 2;
                     break;
-                case 0x08:
+                case 0x04:
                     selectedIndex = 3;
                     break;
             }
@@ -198,10 +247,31 @@ namespace SBandSerialReader
                     selectedIndex = 0;
                     break;
                 case 0x01:
-                    selectedIndex = 1;
+                    selectedIndex = 2;
                     break;
                 case 0x02:
-                    selectedIndex = 2;
+                    selectedIndex = 4;
+                    break;
+                case 0x03:
+                    selectedIndex = 6;
+                    break;
+                case 0x04:
+                    selectedIndex = 7;
+                    break;
+                case 0x05:
+                    selectedIndex = 8;
+                    break;
+                case 0x06:
+                    selectedIndex = 9;
+                    break;
+                case 0x08:
+                    selectedIndex = 1;
+                    break;
+                case 0x09:
+                    selectedIndex = 3;
+                    break;
+                case 0x0A:
+                    selectedIndex = 5;
                     break;
             }
 
@@ -404,16 +474,18 @@ namespace SBandSerialReader
 
         private static void SetFrequency(byte[] freqBytes, Control[] textBoxesHexValue, Control textBoxesVarData)
         {
-            byte[] freqRevBytes = new byte[freqBytes.Length];
-            for(int  i = 0; i < freqBytes.Length; i++)
+            byte[] freqRevBytes = new byte[4];
+            for(int  i = 0; i < 3; i++)
             {
                 freqRevBytes[i] = freqBytes[i];
             }
 
+            freqRevBytes[3] = freqBytes.Length == 3 ? freqRevBytes[3] = 0 : freqRevBytes[3]= freqRevBytes[3];
+
             Array.Reverse(freqRevBytes);
             uint frequency = BitConverter.ToUInt32(freqRevBytes, 0);
 
-            for(int i = 0; i < 4; i++)
+            for(int i = 0; i < freqBytes.Length; i++)
             {
                 textBoxesHexValue[i].Text = DataConverter.ByteToStringHEX(freqBytes[i]);
             }

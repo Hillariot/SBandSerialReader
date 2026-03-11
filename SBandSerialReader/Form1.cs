@@ -21,6 +21,11 @@ namespace SBandSerialReader
         private const int deviceAddress = 0x80;
         private static volatile SerialPort serialPort;
 
+        private TcpServer server = new TcpServer();
+        private List<int> _clients = new List<int>();
+        int ReceivedPackets = 0;
+        int SentPackets = 0;
+
         private Control[] HexValueControls;
         private Control[] VarDataControls;
 
@@ -83,10 +88,12 @@ namespace SBandSerialReader
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;
 
-            aTimer = new System.Timers.Timer(100);
+            aTimer = new System.Timers.Timer(500);
             aTimer.Elapsed += OnTimedEvent;
-            //aTimer.AutoReset = true;
+            aTimer.AutoReset = true;
             //aTimer.Enabled = true;
+
+            panel1.Controls.Add(groupBox3);
 
             refreshSerialPorts();
             if(comboBoxSelectedPort.Items.Count != 0)
@@ -99,6 +106,27 @@ namespace SBandSerialReader
             comboBoxBaudRate.SelectedIndex = 1;
             comboBoxParity.SelectedIndex = 0;
             comboBoxStopBits.SelectedIndex = 1;
+
+            server.DataReceived += OnDataReceived;
+            server.ClientConnected += id =>
+            {
+                if (InvokeRequired)
+                {
+                    BeginInvoke(new Action(() => _clients.Add(id)));
+                    return;
+                }
+                _clients.Add(id);
+            };
+
+            server.ClientDisconnected += id =>
+            {
+                if (InvokeRequired)
+                {
+                    BeginInvoke(new Action(() => _clients.Remove(id)));
+                    return;
+                }
+                _clients.Remove(id);
+            };
 
             HexValueControls = new Control[] {
                 textBoxRow0Value,
@@ -115,7 +143,17 @@ namespace SBandSerialReader
                 textBoxRow11Value,
                 textBoxRow12Value,
                 textBoxRow13Value,
-                textBoxRow14Value
+                textBoxRow14Value,
+                textBoxRow15Value1, textBoxRow15Value2, textBoxRow15Value3,
+                textBoxRow16Value,
+                textBoxRow17Value,
+                textBoxRow18Value,
+                textBoxRow19Value,
+                textBoxRow20Value,
+                textBoxRow21Value,
+                textBoxRow22Value,
+                textBoxRow23Value,
+                textBoxRow24Value
             };
 
             VarDataControls = new Control[] {
@@ -133,13 +171,37 @@ namespace SBandSerialReader
                 textBoxRow11Data,
                 comboBoxRow12Data,
                 comboBoxRow13Data,
-                comboBoxRow14Data
+                comboBoxRow14Data,
+                new Control(), new Control(), textBoxRow15Data,
+                textBoxRow16Data,
+                comboBoxRow17Data,
+                textBoxRow18Data,
+                comboBoxRow19Data,
+                checkBoxRow20Data,
+                checkBoxRow21Data,
+                checkBoxRow22Data,
+                new Control(),
+                textBoxRow24Data
             };
+        }
+
+        private void OnDataReceived(int clientId, byte[] data)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => OnDataReceived(clientId, data)));
+                return;
+            }
+
+            // Здесь ты уже в UI-потоке
+            ReceivedPackets++;
+            labelServerReceived.Text = "Сообщений принято: " + ReceivedPackets;
+            WriteTxBuffer(data);
         }
 
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 32);
+            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 41);
             if (serialPort.IsOpen)
             {
                 serialPort.Write(read, 0, read.Length);
@@ -168,7 +230,21 @@ namespace SBandSerialReader
             textBoxRxBufferASCII.Text = asciiData;
             textBoxRxBufferHEX.Text = hexData;
 
+            WriteTxToServer(data);
+
             isReadingRegs = false;
+        }
+
+        private async void WriteTxToServer(byte[] data)
+        {
+            if (server.IsRunning)
+            {
+                foreach (var id in _clients)
+                    await server.SendAsync(id, data);
+
+                SentPackets++;
+                labelServerTransmitted.Text = "Сообщений отправлено: " + SentPackets;
+            }
         }
 
 
@@ -357,7 +433,7 @@ namespace SBandSerialReader
 
         private void button1_Click(object sender, EventArgs e)
         {
-            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 32);
+            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 41);
             if (serialPort.IsOpen)
             {
                 serialPort.Write(read, 0, read.Length);
@@ -520,6 +596,15 @@ namespace SBandSerialReader
             }
         }
 
+        private void WriteTxBuffer(byte[] data)
+        {
+            byte[] write = CommandGenerator.FifoWrite(deviceAddress, data);
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write(write, 0, write.Length);
+            }
+        }
+
         private void checkBoxReadOnly_CheckChanged(object sender, EventArgs e)
         {
             if (isReadingRegs)
@@ -562,7 +647,10 @@ namespace SBandSerialReader
                 byte mask = (byte)(1 << bitIndex);
                 currentConfig = (byte)((currentConfig & ~mask) | ((bitStatus << bitIndex) & mask));
 
-                HexValueControls[(int)RegMap.Config].Text = DataConverter.ByteToStringHEX(currentConfig);
+                if (bitIndex != 0 && bitIndex != 1)
+                {
+                    HexValueControls[(int)RegMap.Config].Text = DataConverter.ByteToStringHEX(currentConfig);
+                }
 
                 if (serialPort.IsOpen)
                 {
@@ -597,14 +685,14 @@ namespace SBandSerialReader
             ChangeConfig((sender as CheckBox).Checked, 2);
         }
 
-        private void checkBoxRow9DataBit1_CheckedChanged(object sender, EventArgs e)
+        private void buttonRow9DataBit1_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeConfig((sender as CheckBox).Checked, 1);
+            ChangeConfig(true, 1);
         }
 
-        private void checkBoxRow9DataBit0_CheckedChanged(object sender, EventArgs e)
+        private void buttonRow9DataBit0_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeConfig((sender as CheckBox).Checked, 0);
+            ChangeConfig(true, 0);
         }
 
         private void radioButtonRow9DataBitLora_CheckedChanged(object sender, EventArgs e)
@@ -828,6 +916,10 @@ namespace SBandSerialReader
             {
                 return;
             }
+            if (IsUiUpdating)
+            {
+                return;
+            }
 
             //тут -10;22
             try
@@ -875,21 +967,27 @@ namespace SBandSerialReader
             switch (comboBoxRow12Data.SelectedIndex)
             {
                 case 0:
-                    spreadingFactor = 7;
+                    spreadingFactor = 5;
                     break;
                 case 1:
-                    spreadingFactor = 8;
+                    spreadingFactor = 6;
                     break;
                 case 2:
-                    spreadingFactor = 9;
+                    spreadingFactor = 7;
                     break;
                 case 3:
-                    spreadingFactor = 10;
+                    spreadingFactor = 8;
                     break;
                 case 4:
-                    spreadingFactor = 11;
+                    spreadingFactor = 9;
                     break;
                 case 5:
+                    spreadingFactor = 10;
+                    break;
+                case 6:
+                    spreadingFactor = 11;
+                    break;
+                case 7:
                     spreadingFactor = 12;
                     break;
                 default:
@@ -897,14 +995,14 @@ namespace SBandSerialReader
                     break;
             }
 
-            HexValueControls[(int)RegMap.SpreadingFactor].Text = DataConverter.ByteToStringHEX(spreadingFactor);
+            HexValueControls[(int)RegMap.LoraSpreadingFactor].Text = DataConverter.ByteToStringHEX(spreadingFactor);
 
             if (!isReadingRegs)
             {
                 //Здесь отправить в serialPort НО не забыть проверку на open
                 if (serialPort.IsOpen)
                 {
-                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.SpreadingFactor, 1, new byte[] { spreadingFactor });
+                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.LoraSpreadingFactor, 1, new byte[] { spreadingFactor });
                     serialPort.Write(data, 0, data.Length);
                 }
             }
@@ -926,30 +1024,30 @@ namespace SBandSerialReader
             switch (comboBoxRow13Data.SelectedIndex)
             {
                 case 0:
-                    codingRate = 5;
+                    codingRate = 0x01;
                     break;
                 case 1:
-                    codingRate = 6;
+                    codingRate = 0x02;
                     break;
                 case 2:
-                    codingRate = 7;
+                    codingRate = 0x03;
                     break;
                 case 3:
-                    codingRate = 8;
+                    codingRate = 0x04;
                     break;
                 default:
-                    codingRate = 5;
+                    codingRate = 0x01;
                     break;
             }
 
-            HexValueControls[(int)RegMap.CodingRate].Text = DataConverter.ByteToStringHEX(codingRate);
+            HexValueControls[(int)RegMap.LoraCodingRate].Text = DataConverter.ByteToStringHEX(codingRate);
 
             if (!isReadingRegs)
             {
                 //Здесь отправить в serialPort НО не забыть проверку на open
                 if (serialPort.IsOpen)
                 {
-                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.CodingRate, 1, new byte[] { codingRate });
+                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.LoraCodingRate, 1, new byte[] { codingRate });
                     serialPort.Write(data, 0, data.Length);
                 }
             }
@@ -971,27 +1069,48 @@ namespace SBandSerialReader
             switch (comboBoxRow14Data.SelectedIndex)
             {
                 case 0:
-                    bandwidth = 0;
+                    bandwidth = 0x00;
                     break;
                 case 1:
-                    bandwidth = 1;
+                    bandwidth = 0x08;
                     break;
                 case 2:
-                    bandwidth = 2;
+                    bandwidth = 0x01;
+                    break;
+                case 3:
+                    bandwidth = 0x09;
+                    break;
+                case 4:
+                    bandwidth = 0x02;
+                    break;
+                case 5:
+                    bandwidth = 0x0A;
+                    break;
+                case 6:
+                    bandwidth = 0x03;
+                    break;
+                case 7:
+                    bandwidth = 0x04;
+                    break;
+                case 8:
+                    bandwidth = 0x05;
+                    break;
+                case 9:
+                    bandwidth = 0x06;
                     break;
                 default:
-                    bandwidth = 0;
+                    bandwidth = 0x06;
                     break;
             }
 
-            HexValueControls[(int)RegMap.Bandwidth].Text = DataConverter.ByteToStringHEX(bandwidth);
+            HexValueControls[(int)RegMap.LoraBandwidth].Text = DataConverter.ByteToStringHEX(bandwidth);
 
             if (!isReadingRegs)
             {
                 //Здесь отправить в serialPort НО не забыть проверку на open
                 if (serialPort.IsOpen)
                 {
-                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Bandwidth, 1, new byte[] { bandwidth });
+                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.LoraBandwidth, 1, new byte[] { bandwidth });
                     serialPort.Write(data, 0, data.Length);
                 }
             }
@@ -1034,6 +1153,465 @@ namespace SBandSerialReader
                 byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Frequency1, 4, freq);
                 serialPort.Write(cmd, 0, cmd.Length);
             }
+        }
+
+        private void buttonRow2Data_Click(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Reset, 1, new byte[] { 0xAA });
+                serialPort.Write(cmd, 0, cmd.Length);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Reset, 1, new byte[] { 0xBB });
+                serialPort.Write(cmd, 0, cmd.Length);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Reset, 1, new byte[] { 0xCC });
+                serialPort.Write(cmd, 0, cmd.Length);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+            if(textBoxRow24Value.BackColor != Color.White)
+            {
+                return;
+            }
+
+            byte[] key = HexToFixed16Bytes(textBoxRow24Value.Text);
+
+
+            if (serialPort.IsOpen)
+            {
+                byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.Frequency1, 16, key);
+                serialPort.Write(cmd, 0, cmd.Length);
+                textBoxRow24Data.Text = "";
+                textBoxRow24Value.Text = "";
+            }
+        }
+
+        private void textBoxRow24Data_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string data = DataConverter.ASCIIStringToHexString(textBoxRow24Data.Text);
+                textBoxRow24Data.BackColor = Color.White;
+
+                if (data != textBoxRow24Value.Text && data != "")
+                {
+                    textBoxRow24Value.Text = data;
+                }
+            }
+            catch (Exception)
+            {
+                textBoxRow24Data.BackColor = Color.OrangeRed;
+            }
+        }
+
+        public byte[] HexToFixed16Bytes(string hex)
+        {
+            byte[] result = new byte[16];
+
+            int byteCount = hex.Length / 2;
+
+            for (int i = 0; i < byteCount; i++)
+            {
+                result[i] = Convert.ToByte(hex.Substring(i * 2, 2), 16);
+            }
+
+            return result;
+        }
+
+        private void textBoxRow24Value_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxRow24Value.Text.Length > 32)
+            {
+                textBoxRow24Value.BackColor = Color.OrangeRed;
+                return;
+            }
+
+            try
+            {
+                string data = DataConverter.HEXStringToASCIIString(textBoxRow24Value.Text);
+                textBoxRow24Value.BackColor = Color.White;
+
+                if (data != textBoxRow24Data.Text)
+                {
+                    if (!data.Contains("?") && !data.Contains("\0"))
+                    {
+                        textBoxRow24Data.Text = data;
+                    }
+                    else
+                    {
+                        textBoxRow24Data.Text = "";
+                        textBoxRow24Data.BackColor = Color.BlueViolet;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                textBoxRow24Value.BackColor = Color.OrangeRed;
+            }
+        }
+
+        private async void buttonOpenConnect_Click(object sender, EventArgs e)
+        {
+            await server.StartAsync("0.0.0.0", 8924);
+            labelServerStatus.Text = "Сервер включён";
+        }
+
+        private void buttonCloseConnect_Click(object sender, EventArgs e)
+        {
+            server.Stop();
+            labelServerStatus.Text = "Сервер отключён";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            byte[] data = new byte[] { 0x01, 0x02, 0x03, 0x04, 0xAA, 0xBB };
+
+            SetReadFifo(data);
+        }
+
+        private void comboBoxRow17Data_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            byte bandwidth;
+
+            switch (comboBoxRow17Data.SelectedIndex)
+            {
+                case 0:
+                    bandwidth = 0x1F;
+                    break;
+                case 1:
+                    bandwidth = 0x17;
+                    break;
+                case 2:
+                    bandwidth = 0x0F;
+                    break;
+                case 3:
+                    bandwidth = 0x1E;
+                    break;
+                case 4:
+                    bandwidth = 0x16;
+                    break;
+                case 5:
+                    bandwidth = 0x0E;
+                    break;
+                case 6:
+                    bandwidth = 0x1D;
+                    break;
+                case 7:
+                    bandwidth = 0x15;
+                    break;
+                case 8:
+                    bandwidth = 0x0D;
+                    break;
+                case 9:
+                    bandwidth = 0x1C;
+                    break;
+                case 10:
+                    bandwidth = 0x14;
+                    break;
+                case 11:
+                    bandwidth = 0x0C;
+                    break;
+                case 12:
+                    bandwidth = 0x1B;
+                    break;
+                case 13:
+                    bandwidth = 0x13;
+                    break;
+                case 14:
+                    bandwidth = 0x0B;
+                    break;
+                case 15:
+                    bandwidth = 0x1A;
+                    break;
+                case 16:
+                    bandwidth = 0x12;
+                    break;
+                case 17:
+                    bandwidth = 0x0A;
+                    break;
+                case 18:
+                    bandwidth = 0x19;
+                    break;
+                case 19:
+                    bandwidth = 0x11;
+                    break;
+                case 20:
+                    bandwidth = 0x09;
+                    break;
+                default:
+                    bandwidth = 0x09;
+                    break;
+            }
+
+            HexValueControls[(int)RegMap.FskBandwidth].Text = DataConverter.ByteToStringHEX(bandwidth);
+
+            if (!isReadingRegs)
+            {
+                //Здесь отправить в serialPort НО не забыть проверку на open
+                if (serialPort.IsOpen)
+                {
+                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.LoraBandwidth, 1, new byte[] { bandwidth });
+                    serialPort.Write(data, 0, data.Length);
+                }
+            }
+
+        }
+
+        private void textBoxRow15Data_TextChanged(object sender, EventArgs e)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            if (!uint.TryParse(VarDataControls[(int)RegMap.BitRate3].Text, out uint frequency))
+            {
+                VarDataControls[(int)RegMap.BitRate3].BackColor = Color.OrangeRed;
+                return;
+            }
+            VarDataControls[(int)RegMap.BitRate3].BackColor = Color.White;
+
+            string freqData1 = DataConverter.ByteToStringHEX((byte)(frequency >> 16));
+            string freqData2 = DataConverter.ByteToStringHEX((byte)(frequency >> 8));
+            string freqData3 = DataConverter.ByteToStringHEX((byte)(frequency));
+
+            HexValueControls[(int)RegMap.BitRate1].Text = freqData1;
+            HexValueControls[(int)RegMap.BitRate2].Text = freqData2;
+            HexValueControls[(int)RegMap.BitRate3].Text = freqData3;
+        }
+
+        private void textBoxRow16Data_TextChanged(object sender, EventArgs e)
+        {
+            if (HexValueControls[(int)RegMap.FskFdev].Text == "")
+            {
+                isReadingRegs = true;
+                HexValueControls[(int)RegMap.FskFdev].Text = "00";
+                isReadingRegs = false;
+            }
+
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            //тут 0;200
+            try
+            {
+                int data = int.Parse(VarDataControls[(int)RegMap.FskFdev].Text);
+
+                if (data < 0 || data > 201)
+                {
+                    VarDataControls[(int)RegMap.FskFdev].BackColor = Color.OrangeRed;
+                    return;
+                }
+                VarDataControls[(int)RegMap.FskFdev].BackColor = Color.White;
+
+
+                HexValueControls[(int)RegMap.FskFdev].Text = DataConverter.ByteToStringHEX((byte)(data));
+
+            }
+            catch
+            {
+                VarDataControls[(int)RegMap.FskFdev].BackColor = Color.OrangeRed;
+            }
+        }
+
+        private void textBoxRow18Data_TextChanged(object sender, EventArgs e)
+        {
+            if (HexValueControls[(int)RegMap.FskPreambleLength].Text == "")
+            {
+                isReadingRegs = true;
+                HexValueControls[(int)RegMap.FskPreambleLength].Text = "00";
+                isReadingRegs = false;
+            }
+
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            //тут 0;255
+            try
+            {
+                int data = int.Parse(VarDataControls[(int)RegMap.FskPreambleLength].Text);
+
+                if (data < 0 || data > 255)
+                {
+                    VarDataControls[(int)RegMap.FskPreambleLength].BackColor = Color.OrangeRed;
+                    return;
+                }
+                VarDataControls[(int)RegMap.FskPreambleLength].BackColor = Color.White;
+
+
+                HexValueControls[(int)RegMap.FskPreambleLength].Text = DataConverter.ByteToStringHEX((byte)(data));
+
+            }
+            catch
+            {
+                VarDataControls[(int)RegMap.FskPreambleLength].BackColor = Color.OrangeRed;
+            }
+        }
+
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxRow19Data_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            byte bandwidth;
+
+            switch (comboBoxRow19Data.SelectedIndex)
+            {
+                case 0:
+                    bandwidth = 0x00;
+                    break;
+                case 1:
+                    bandwidth = 0x08;
+                    break;
+                case 2:
+                    bandwidth = 0x09;
+                    break;
+                case 3:
+                    bandwidth = 0x0A;
+                    break;
+                case 4:
+                    bandwidth = 0x0B;
+                    break;
+                default:
+                    bandwidth = 0x00;
+                    break;
+            }
+
+            HexValueControls[(int)RegMap.FskGaussFilter].Text = DataConverter.ByteToStringHEX(bandwidth);
+
+            if (!isReadingRegs)
+            {
+                //Здесь отправить в serialPort НО не забыть проверку на open
+                if (serialPort.IsOpen)
+                {
+                    byte[] data = CommandGenerator.RegisterWrite(deviceAddress, (byte)RegMap.FskGaussFilter, 1, new byte[] { bandwidth });
+                    serialPort.Write(data, 0, data.Length);
+                }
+            }
+
+        }
+
+        private void checkBoxRow20Data_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HexValueControls[(int)RegMap.PioDir].Text == "")
+            {
+                isReadingRegs = true;
+                HexValueControls[(int)RegMap.PioDir].Text = "00";
+                isReadingRegs = false;
+            }
+
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            HexValueControls[(int)RegMap.PioDir].Text= ((CheckBox)sender).Checked?"1":"0";
+        }
+
+        private void checkBoxRow21Data_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HexValueControls[(int)RegMap.PioOut].Text == "")
+            {
+                isReadingRegs = true;
+                HexValueControls[(int)RegMap.PioOut].Text = "00";
+                isReadingRegs = false;
+            }
+
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            HexValueControls[(int)RegMap.PioOut].Text = ((CheckBox)sender).Checked ? "1" : "0";
+        }
+
+        private void checkBoxRow22Data_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HexValueControls[(int)RegMap.PioIn].Text == "")
+            {
+                isReadingRegs = true;
+                HexValueControls[(int)RegMap.PioIn].Text = "00";
+                isReadingRegs = false;
+            }
+
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            HexValueControls[(int)RegMap.PioIn].Text = ((CheckBox)sender).Checked ? "1" : "0";
         }
     }
 }
