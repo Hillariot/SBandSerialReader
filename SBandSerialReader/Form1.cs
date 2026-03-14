@@ -25,6 +25,7 @@ namespace SBandSerialReader
         private List<int> _clients = new List<int>();
         int ReceivedPackets = 0;
         int SentPackets = 0;
+        int _outputCliendId= -1;
 
         private Control[] HexValueControls;
         private Control[] VarDataControls;
@@ -112,9 +113,14 @@ namespace SBandSerialReader
             {
                 if (InvokeRequired)
                 {
-                    BeginInvoke(new Action(() => _clients.Add(id)));
+                    BeginInvoke(new Action(() =>
+                    {
+                        _outputCliendId = id;
+                        _clients.Add(id);
+                    })); 
                     return;
                 }
+                _outputCliendId= id;
                 _clients.Add(id);
             };
 
@@ -122,10 +128,18 @@ namespace SBandSerialReader
             {
                 if (InvokeRequired)
                 {
-                    BeginInvoke(new Action(() => _clients.Remove(id)));
+                    BeginInvoke(new Action(() =>
+                    {
+                        _clients.Remove(id);
+                        if (_outputCliendId == id)
+                            _outputCliendId = -1;
+                    }));
                     return;
                 }
+
                 _clients.Remove(id);
+                if (_outputCliendId == id)
+                    _outputCliendId = -1;
             };
 
             HexValueControls = new Control[] {
@@ -1403,7 +1417,7 @@ namespace SBandSerialReader
 
         private async void buttonOpenConnect_Click(object sender, EventArgs e)
         {
-            await server.StartAsync("0.0.0.0", 8924);
+            await server.StartAsync("127.0.0.1", 8924);
             labelServerStatus.Text = "Сервер включён";
         }
 
@@ -1871,9 +1885,18 @@ namespace SBandSerialReader
 
         }
 
+
+
         private async void SendButton_Click(object sender, EventArgs e)
         {
-            await server.SendAsync(110, DataConverter.ASCIIStringToByteArray(textBoxSendData.Text));
+            if (_outputCliendId == -1)
+            {
+                MessageBox.Show("Клиент не подключён");
+                return;
+            }
+
+            byte[] data = DataConverter.ASCIIStringToByteArray(textBoxSendData.Text);
+            await server.SendAsync(_outputCliendId, data);
         }
     }
 }
