@@ -46,9 +46,45 @@
             this.labelConnectionStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBoxRow22Data = new System.Windows.Forms.CheckBox();
-            this.checkBoxRow21Data = new System.Windows.Forms.CheckBox();
-            this.checkBoxRow20Data = new System.Windows.Forms.CheckBox();
+            this.groupBoxRow22Data = new System.Windows.Forms.GroupBox();
+            this.checkBoxRow22DataBit1 = new System.Windows.Forms.CheckBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.checkBoxRow22DataBit0 = new System.Windows.Forms.CheckBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.checkBoxRow22DataBit3 = new System.Windows.Forms.CheckBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.checkBoxRow22DataBit2 = new System.Windows.Forms.CheckBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.checkBoxRow22DataBit5 = new System.Windows.Forms.CheckBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.checkBoxRow22DataBit4 = new System.Windows.Forms.CheckBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.groupBoxRow21Data = new System.Windows.Forms.GroupBox();
+            this.checkBoxRow21DataBit1 = new System.Windows.Forms.CheckBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.checkBoxRow21DataBit0 = new System.Windows.Forms.CheckBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.checkBoxRow21DataBit3 = new System.Windows.Forms.CheckBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.checkBoxRow21DataBit2 = new System.Windows.Forms.CheckBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.checkBoxRow21DataBit5 = new System.Windows.Forms.CheckBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.checkBoxRow21DataBit4 = new System.Windows.Forms.CheckBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.groupBoxRow20Data = new System.Windows.Forms.GroupBox();
+            this.checkBoxRow20DataBit1 = new System.Windows.Forms.CheckBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.checkBoxRow20DataBit0 = new System.Windows.Forms.CheckBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.checkBoxRow20DataBit3 = new System.Windows.Forms.CheckBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.checkBoxRow20DataBit2 = new System.Windows.Forms.CheckBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.checkBoxRow20DataBit5 = new System.Windows.Forms.CheckBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.checkBoxRow20DataBit4 = new System.Windows.Forms.CheckBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.comboBoxRow19Data = new System.Windows.Forms.ComboBox();
             this.textBoxRow24Value = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -59,21 +95,15 @@
             this.textBox69 = new System.Windows.Forms.TextBox();
             this.textBox70 = new System.Windows.Forms.TextBox();
             this.groupBoxRow23Data = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.comboBoxRow23DataBits0_3 = new System.Windows.Forms.ComboBox();
+            this.checkBoxRow23DataBit7 = new System.Windows.Forms.CheckBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRow23DataBit6 = new System.Windows.Forms.CheckBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.checkBoxRow23DataBit5 = new System.Windows.Forms.CheckBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label47 = new System.Windows.Forms.Label();
+            this.checkBoxRow23DataBit4 = new System.Windows.Forms.CheckBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.textBoxRow23Value = new System.Windows.Forms.TextBox();
             this.textBox61 = new System.Windows.Forms.TextBox();
@@ -116,6 +146,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.groupBoxRow9Data = new System.Windows.Forms.GroupBox();
+            this.buttonRow9DataBits2 = new System.Windows.Forms.Button();
             this.buttonRow9DataBit0 = new System.Windows.Forms.Button();
             this.buttonRow9DataBit1 = new System.Windows.Forms.Button();
             this.checkBoxRow9DataBit4 = new System.Windows.Forms.CheckBox();
@@ -130,26 +161,17 @@
             this.radioButtonRow9DataBitLora = new System.Windows.Forms.RadioButton();
             this.label23 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.checkBoxRow9DataBit2 = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBoxRow8Data = new System.Windows.Forms.GroupBox();
-            this.checkBoxRow8DataBit2 = new System.Windows.Forms.CheckBox();
+            this.comboBoxRow8DataBits0_2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRow8DataBits3_5 = new System.Windows.Forms.ComboBox();
             this.checkBoxRow8DataBit7 = new System.Windows.Forms.CheckBox();
             this.label38 = new System.Windows.Forms.Label();
             this.checkBoxRow8DataBit6 = new System.Windows.Forms.CheckBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.checkBoxRow8DataBit5 = new System.Windows.Forms.CheckBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.checkBoxRow8DataBit0 = new System.Windows.Forms.CheckBox();
-            this.checkBoxRow8DataBit4 = new System.Windows.Forms.CheckBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.checkBoxRow8DataBit1 = new System.Windows.Forms.CheckBox();
-            this.checkBoxRow8DataBit3 = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.groupBoxRow7Data = new System.Windows.Forms.GroupBox();
             this.label43 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -274,6 +296,8 @@
             this.textBoxRxBufferHEX = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SendButton = new System.Windows.Forms.Button();
+            this.textBoxSendData = new System.Windows.Forms.TextBox();
             this.labelServerStatus = new System.Windows.Forms.Label();
             this.labelServerTransmitted = new System.Windows.Forms.Label();
             this.labelServerReceived = new System.Windows.Forms.Label();
@@ -283,6 +307,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDataBits)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBoxRow22Data.SuspendLayout();
+            this.groupBoxRow21Data.SuspendLayout();
+            this.groupBoxRow20Data.SuspendLayout();
             this.groupBoxRow23Data.SuspendLayout();
             this.groupBoxRow9Data.SuspendLayout();
             this.groupBoxRow9DataBit5.SuspendLayout();
@@ -509,9 +536,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBoxRow22Data);
-            this.groupBox3.Controls.Add(this.checkBoxRow21Data);
-            this.groupBox3.Controls.Add(this.checkBoxRow20Data);
+            this.groupBox3.Controls.Add(this.groupBoxRow22Data);
+            this.groupBox3.Controls.Add(this.groupBoxRow21Data);
+            this.groupBox3.Controls.Add(this.groupBoxRow20Data);
             this.groupBox3.Controls.Add(this.comboBoxRow19Data);
             this.groupBox3.Controls.Add(this.textBoxRow24Value);
             this.groupBox3.Controls.Add(this.button5);
@@ -661,43 +688,454 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(735, 782);
+            this.groupBox3.Size = new System.Drawing.Size(760, 873);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Вывод данных";
             // 
-            // checkBoxRow22Data
+            // groupBoxRow22Data
             // 
-            this.checkBoxRow22Data.AutoSize = true;
-            this.checkBoxRow22Data.Location = new System.Drawing.Point(310, 680);
-            this.checkBoxRow22Data.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow22Data.Name = "checkBoxRow22Data";
-            this.checkBoxRow22Data.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow22Data.TabIndex = 217;
-            this.checkBoxRow22Data.UseVisualStyleBackColor = true;
-            this.checkBoxRow22Data.CheckedChanged += new System.EventHandler(this.checkBoxRow22Data_CheckedChanged);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit1);
+            this.groupBoxRow22Data.Controls.Add(this.label56);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit0);
+            this.groupBoxRow22Data.Controls.Add(this.label57);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit3);
+            this.groupBoxRow22Data.Controls.Add(this.label58);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit2);
+            this.groupBoxRow22Data.Controls.Add(this.label59);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit5);
+            this.groupBoxRow22Data.Controls.Add(this.label60);
+            this.groupBoxRow22Data.Controls.Add(this.checkBoxRow22DataBit4);
+            this.groupBoxRow22Data.Controls.Add(this.label61);
+            this.groupBoxRow22Data.Location = new System.Drawing.Point(305, 728);
+            this.groupBoxRow22Data.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow22Data.Name = "groupBoxRow22Data";
+            this.groupBoxRow22Data.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow22Data.Size = new System.Drawing.Size(344, 50);
+            this.groupBoxRow22Data.TabIndex = 218;
+            this.groupBoxRow22Data.TabStop = false;
             // 
-            // checkBoxRow21Data
+            // checkBoxRow22DataBit1
             // 
-            this.checkBoxRow21Data.AutoSize = true;
-            this.checkBoxRow21Data.Location = new System.Drawing.Point(310, 653);
-            this.checkBoxRow21Data.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow21Data.Name = "checkBoxRow21Data";
-            this.checkBoxRow21Data.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow21Data.TabIndex = 216;
-            this.checkBoxRow21Data.UseVisualStyleBackColor = true;
-            this.checkBoxRow21Data.CheckedChanged += new System.EventHandler(this.checkBoxRow21Data_CheckedChanged);
+            this.checkBoxRow22DataBit1.AutoSize = true;
+            this.checkBoxRow22DataBit1.Location = new System.Drawing.Point(128, 26);
+            this.checkBoxRow22DataBit1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit1.Name = "checkBoxRow22DataBit1";
+            this.checkBoxRow22DataBit1.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit1.TabIndex = 149;
+            this.checkBoxRow22DataBit1.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit1.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
             // 
-            // checkBoxRow20Data
+            // label56
             // 
-            this.checkBoxRow20Data.AutoSize = true;
-            this.checkBoxRow20Data.Location = new System.Drawing.Point(310, 624);
-            this.checkBoxRow20Data.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow20Data.Name = "checkBoxRow20Data";
-            this.checkBoxRow20Data.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow20Data.TabIndex = 157;
-            this.checkBoxRow20Data.UseVisualStyleBackColor = true;
-            this.checkBoxRow20Data.CheckedChanged += new System.EventHandler(this.checkBoxRow20Data_CheckedChanged);
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(130, 12);
+            this.label56.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(13, 13);
+            this.label56.TabIndex = 150;
+            this.label56.Text = "1";
+            // 
+            // checkBoxRow22DataBit0
+            // 
+            this.checkBoxRow22DataBit0.AutoSize = true;
+            this.checkBoxRow22DataBit0.Location = new System.Drawing.Point(157, 26);
+            this.checkBoxRow22DataBit0.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit0.Name = "checkBoxRow22DataBit0";
+            this.checkBoxRow22DataBit0.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit0.TabIndex = 151;
+            this.checkBoxRow22DataBit0.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit0.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(157, 12);
+            this.label57.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(13, 13);
+            this.label57.TabIndex = 152;
+            this.label57.Text = "0";
+            // 
+            // checkBoxRow22DataBit3
+            // 
+            this.checkBoxRow22DataBit3.AutoSize = true;
+            this.checkBoxRow22DataBit3.Location = new System.Drawing.Point(74, 26);
+            this.checkBoxRow22DataBit3.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit3.Name = "checkBoxRow22DataBit3";
+            this.checkBoxRow22DataBit3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit3.TabIndex = 145;
+            this.checkBoxRow22DataBit3.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit3.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(76, 12);
+            this.label58.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(13, 13);
+            this.label58.TabIndex = 146;
+            this.label58.Text = "3";
+            // 
+            // checkBoxRow22DataBit2
+            // 
+            this.checkBoxRow22DataBit2.AutoSize = true;
+            this.checkBoxRow22DataBit2.Location = new System.Drawing.Point(103, 26);
+            this.checkBoxRow22DataBit2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit2.Name = "checkBoxRow22DataBit2";
+            this.checkBoxRow22DataBit2.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit2.TabIndex = 147;
+            this.checkBoxRow22DataBit2.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit2.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(103, 12);
+            this.label59.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(13, 13);
+            this.label59.TabIndex = 148;
+            this.label59.Text = "2";
+            // 
+            // checkBoxRow22DataBit5
+            // 
+            this.checkBoxRow22DataBit5.AutoSize = true;
+            this.checkBoxRow22DataBit5.Location = new System.Drawing.Point(19, 26);
+            this.checkBoxRow22DataBit5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit5.Name = "checkBoxRow22DataBit5";
+            this.checkBoxRow22DataBit5.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit5.TabIndex = 141;
+            this.checkBoxRow22DataBit5.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit5.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(21, 12);
+            this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(13, 13);
+            this.label60.TabIndex = 142;
+            this.label60.Text = "5";
+            // 
+            // checkBoxRow22DataBit4
+            // 
+            this.checkBoxRow22DataBit4.AutoSize = true;
+            this.checkBoxRow22DataBit4.Location = new System.Drawing.Point(48, 26);
+            this.checkBoxRow22DataBit4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow22DataBit4.Name = "checkBoxRow22DataBit4";
+            this.checkBoxRow22DataBit4.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow22DataBit4.TabIndex = 143;
+            this.checkBoxRow22DataBit4.UseVisualStyleBackColor = true;
+            this.checkBoxRow22DataBit4.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(48, 12);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(13, 13);
+            this.label61.TabIndex = 144;
+            this.label61.Text = "4";
+            // 
+            // groupBoxRow21Data
+            // 
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit1);
+            this.groupBoxRow21Data.Controls.Add(this.label49);
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit0);
+            this.groupBoxRow21Data.Controls.Add(this.label51);
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit3);
+            this.groupBoxRow21Data.Controls.Add(this.label52);
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit2);
+            this.groupBoxRow21Data.Controls.Add(this.label53);
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit5);
+            this.groupBoxRow21Data.Controls.Add(this.label54);
+            this.groupBoxRow21Data.Controls.Add(this.checkBoxRow21DataBit4);
+            this.groupBoxRow21Data.Controls.Add(this.label55);
+            this.groupBoxRow21Data.Location = new System.Drawing.Point(307, 676);
+            this.groupBoxRow21Data.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow21Data.Name = "groupBoxRow21Data";
+            this.groupBoxRow21Data.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow21Data.Size = new System.Drawing.Size(344, 50);
+            this.groupBoxRow21Data.TabIndex = 217;
+            this.groupBoxRow21Data.TabStop = false;
+            // 
+            // checkBoxRow21DataBit1
+            // 
+            this.checkBoxRow21DataBit1.AutoSize = true;
+            this.checkBoxRow21DataBit1.Location = new System.Drawing.Point(128, 26);
+            this.checkBoxRow21DataBit1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit1.Name = "checkBoxRow21DataBit1";
+            this.checkBoxRow21DataBit1.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit1.TabIndex = 149;
+            this.checkBoxRow21DataBit1.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit1.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(130, 12);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(13, 13);
+            this.label49.TabIndex = 150;
+            this.label49.Text = "1";
+            // 
+            // checkBoxRow21DataBit0
+            // 
+            this.checkBoxRow21DataBit0.AutoSize = true;
+            this.checkBoxRow21DataBit0.Location = new System.Drawing.Point(157, 26);
+            this.checkBoxRow21DataBit0.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit0.Name = "checkBoxRow21DataBit0";
+            this.checkBoxRow21DataBit0.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit0.TabIndex = 151;
+            this.checkBoxRow21DataBit0.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit0.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(157, 12);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(13, 13);
+            this.label51.TabIndex = 152;
+            this.label51.Text = "0";
+            // 
+            // checkBoxRow21DataBit3
+            // 
+            this.checkBoxRow21DataBit3.AutoSize = true;
+            this.checkBoxRow21DataBit3.Location = new System.Drawing.Point(74, 26);
+            this.checkBoxRow21DataBit3.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit3.Name = "checkBoxRow21DataBit3";
+            this.checkBoxRow21DataBit3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit3.TabIndex = 145;
+            this.checkBoxRow21DataBit3.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit3.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(76, 12);
+            this.label52.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(13, 13);
+            this.label52.TabIndex = 146;
+            this.label52.Text = "3";
+            // 
+            // checkBoxRow21DataBit2
+            // 
+            this.checkBoxRow21DataBit2.AutoSize = true;
+            this.checkBoxRow21DataBit2.Location = new System.Drawing.Point(103, 26);
+            this.checkBoxRow21DataBit2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit2.Name = "checkBoxRow21DataBit2";
+            this.checkBoxRow21DataBit2.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit2.TabIndex = 147;
+            this.checkBoxRow21DataBit2.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit2.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(103, 12);
+            this.label53.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(13, 13);
+            this.label53.TabIndex = 148;
+            this.label53.Text = "2";
+            // 
+            // checkBoxRow21DataBit5
+            // 
+            this.checkBoxRow21DataBit5.AutoSize = true;
+            this.checkBoxRow21DataBit5.Location = new System.Drawing.Point(19, 26);
+            this.checkBoxRow21DataBit5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit5.Name = "checkBoxRow21DataBit5";
+            this.checkBoxRow21DataBit5.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit5.TabIndex = 141;
+            this.checkBoxRow21DataBit5.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit5.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(21, 12);
+            this.label54.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(13, 13);
+            this.label54.TabIndex = 142;
+            this.label54.Text = "5";
+            // 
+            // checkBoxRow21DataBit4
+            // 
+            this.checkBoxRow21DataBit4.AutoSize = true;
+            this.checkBoxRow21DataBit4.Location = new System.Drawing.Point(48, 26);
+            this.checkBoxRow21DataBit4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow21DataBit4.Name = "checkBoxRow21DataBit4";
+            this.checkBoxRow21DataBit4.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow21DataBit4.TabIndex = 143;
+            this.checkBoxRow21DataBit4.UseVisualStyleBackColor = true;
+            this.checkBoxRow21DataBit4.CheckedChanged += new System.EventHandler(this.checkBoxRow21DataBit_CheckedChanged);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(48, 12);
+            this.label55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(13, 13);
+            this.label55.TabIndex = 144;
+            this.label55.Text = "4";
+            // 
+            // groupBoxRow20Data
+            // 
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit1);
+            this.groupBoxRow20Data.Controls.Add(this.label35);
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit0);
+            this.groupBoxRow20Data.Controls.Add(this.label47);
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit3);
+            this.groupBoxRow20Data.Controls.Add(this.label32);
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit2);
+            this.groupBoxRow20Data.Controls.Add(this.label34);
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit5);
+            this.groupBoxRow20Data.Controls.Add(this.label29);
+            this.groupBoxRow20Data.Controls.Add(this.checkBoxRow20DataBit4);
+            this.groupBoxRow20Data.Controls.Add(this.label31);
+            this.groupBoxRow20Data.Location = new System.Drawing.Point(307, 624);
+            this.groupBoxRow20Data.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow20Data.Name = "groupBoxRow20Data";
+            this.groupBoxRow20Data.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxRow20Data.Size = new System.Drawing.Size(344, 50);
+            this.groupBoxRow20Data.TabIndex = 216;
+            this.groupBoxRow20Data.TabStop = false;
+            // 
+            // checkBoxRow20DataBit1
+            // 
+            this.checkBoxRow20DataBit1.AutoSize = true;
+            this.checkBoxRow20DataBit1.Location = new System.Drawing.Point(128, 26);
+            this.checkBoxRow20DataBit1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit1.Name = "checkBoxRow20DataBit1";
+            this.checkBoxRow20DataBit1.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit1.TabIndex = 149;
+            this.checkBoxRow20DataBit1.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit1.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(130, 12);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(13, 13);
+            this.label35.TabIndex = 150;
+            this.label35.Text = "1";
+            // 
+            // checkBoxRow20DataBit0
+            // 
+            this.checkBoxRow20DataBit0.AutoSize = true;
+            this.checkBoxRow20DataBit0.Location = new System.Drawing.Point(157, 26);
+            this.checkBoxRow20DataBit0.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit0.Name = "checkBoxRow20DataBit0";
+            this.checkBoxRow20DataBit0.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit0.TabIndex = 151;
+            this.checkBoxRow20DataBit0.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit0.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(157, 12);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(13, 13);
+            this.label47.TabIndex = 152;
+            this.label47.Text = "0";
+            // 
+            // checkBoxRow20DataBit3
+            // 
+            this.checkBoxRow20DataBit3.AutoSize = true;
+            this.checkBoxRow20DataBit3.Location = new System.Drawing.Point(74, 26);
+            this.checkBoxRow20DataBit3.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit3.Name = "checkBoxRow20DataBit3";
+            this.checkBoxRow20DataBit3.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit3.TabIndex = 145;
+            this.checkBoxRow20DataBit3.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit3.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(76, 12);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(13, 13);
+            this.label32.TabIndex = 146;
+            this.label32.Text = "3";
+            // 
+            // checkBoxRow20DataBit2
+            // 
+            this.checkBoxRow20DataBit2.AutoSize = true;
+            this.checkBoxRow20DataBit2.Location = new System.Drawing.Point(103, 26);
+            this.checkBoxRow20DataBit2.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit2.Name = "checkBoxRow20DataBit2";
+            this.checkBoxRow20DataBit2.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit2.TabIndex = 147;
+            this.checkBoxRow20DataBit2.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit2.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(103, 12);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(13, 13);
+            this.label34.TabIndex = 148;
+            this.label34.Text = "2";
+            // 
+            // checkBoxRow20DataBit5
+            // 
+            this.checkBoxRow20DataBit5.AutoSize = true;
+            this.checkBoxRow20DataBit5.Location = new System.Drawing.Point(19, 26);
+            this.checkBoxRow20DataBit5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit5.Name = "checkBoxRow20DataBit5";
+            this.checkBoxRow20DataBit5.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit5.TabIndex = 141;
+            this.checkBoxRow20DataBit5.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit5.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(21, 12);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(13, 13);
+            this.label29.TabIndex = 142;
+            this.label29.Text = "5";
+            // 
+            // checkBoxRow20DataBit4
+            // 
+            this.checkBoxRow20DataBit4.AutoSize = true;
+            this.checkBoxRow20DataBit4.Location = new System.Drawing.Point(48, 26);
+            this.checkBoxRow20DataBit4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow20DataBit4.Name = "checkBoxRow20DataBit4";
+            this.checkBoxRow20DataBit4.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow20DataBit4.TabIndex = 143;
+            this.checkBoxRow20DataBit4.UseVisualStyleBackColor = true;
+            this.checkBoxRow20DataBit4.CheckedChanged += new System.EventHandler(this.checkBoxRow20DataBit_CheckedChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(48, 12);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(13, 13);
+            this.label31.TabIndex = 144;
+            this.label31.Text = "4";
             // 
             // comboBoxRow19Data
             // 
@@ -712,22 +1150,23 @@
             this.comboBoxRow19Data.Location = new System.Drawing.Point(303, 595);
             this.comboBoxRow19Data.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxRow19Data.Name = "comboBoxRow19Data";
-            this.comboBoxRow19Data.Size = new System.Drawing.Size(101, 21);
+            this.comboBoxRow19Data.Size = new System.Drawing.Size(92, 21);
             this.comboBoxRow19Data.TabIndex = 215;
             this.comboBoxRow19Data.SelectedIndexChanged += new System.EventHandler(this.comboBoxRow19Data_SelectedIndexChanged);
             // 
             // textBoxRow24Value
             // 
-            this.textBoxRow24Value.Location = new System.Drawing.Point(168, 754);
+            this.textBoxRow24Value.Location = new System.Drawing.Point(170, 841);
             this.textBoxRow24Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow24Value.Name = "textBoxRow24Value";
             this.textBoxRow24Value.Size = new System.Drawing.Size(124, 20);
             this.textBoxRow24Value.TabIndex = 214;
             this.textBoxRow24Value.TextChanged += new System.EventHandler(this.textBoxRow24Value_TextChanged);
+            this.textBoxRow24Value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRow24Value_KeyPress);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(440, 750);
+            this.button5.Location = new System.Drawing.Point(442, 837);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 213;
@@ -737,7 +1176,7 @@
             // 
             // textBoxRow24Data
             // 
-            this.textBoxRow24Data.Location = new System.Drawing.Point(305, 754);
+            this.textBoxRow24Data.Location = new System.Drawing.Point(307, 841);
             this.textBoxRow24Data.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow24Data.Name = "textBoxRow24Data";
             this.textBoxRow24Data.Size = new System.Drawing.Size(124, 20);
@@ -746,7 +1185,7 @@
             // 
             // textBox64
             // 
-            this.textBox64.Location = new System.Drawing.Point(80, 754);
+            this.textBox64.Location = new System.Drawing.Point(82, 841);
             this.textBox64.Margin = new System.Windows.Forms.Padding(2);
             this.textBox64.Name = "textBox64";
             this.textBox64.ReadOnly = true;
@@ -756,7 +1195,7 @@
             // 
             // textBox65
             // 
-            this.textBox65.Location = new System.Drawing.Point(7, 754);
+            this.textBox65.Location = new System.Drawing.Point(9, 841);
             this.textBox65.Margin = new System.Windows.Forms.Padding(2);
             this.textBox65.Name = "textBox65";
             this.textBox65.ReadOnly = true;
@@ -767,7 +1206,7 @@
             // 
             // textBoxRow22Value
             // 
-            this.textBoxRow22Value.Location = new System.Drawing.Point(168, 673);
+            this.textBoxRow22Value.Location = new System.Drawing.Point(171, 740);
             this.textBoxRow22Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow22Value.Name = "textBoxRow22Value";
             this.textBoxRow22Value.ReadOnly = true;
@@ -776,7 +1215,7 @@
             // 
             // textBox69
             // 
-            this.textBox69.Location = new System.Drawing.Point(78, 673);
+            this.textBox69.Location = new System.Drawing.Point(81, 740);
             this.textBox69.Margin = new System.Windows.Forms.Padding(2);
             this.textBox69.Name = "textBox69";
             this.textBox69.ReadOnly = true;
@@ -786,7 +1225,7 @@
             // 
             // textBox70
             // 
-            this.textBox70.Location = new System.Drawing.Point(7, 673);
+            this.textBox70.Location = new System.Drawing.Point(10, 740);
             this.textBox70.Margin = new System.Windows.Forms.Padding(2);
             this.textBox70.Name = "textBox70";
             this.textBox70.ReadOnly = true;
@@ -797,23 +1236,17 @@
             // 
             // groupBoxRow23Data
             // 
-            this.groupBoxRow23Data.Controls.Add(this.checkBox1);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox2);
+            this.groupBoxRow23Data.Controls.Add(this.comboBoxRow23DataBits0_3);
+            this.groupBoxRow23Data.Controls.Add(this.checkBoxRow23DataBit7);
             this.groupBoxRow23Data.Controls.Add(this.label27);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox3);
+            this.groupBoxRow23Data.Controls.Add(this.checkBoxRow23DataBit6);
             this.groupBoxRow23Data.Controls.Add(this.label28);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox4);
-            this.groupBoxRow23Data.Controls.Add(this.label29);
+            this.groupBoxRow23Data.Controls.Add(this.checkBoxRow23DataBit5);
             this.groupBoxRow23Data.Controls.Add(this.label30);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox5);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox6);
-            this.groupBoxRow23Data.Controls.Add(this.label47);
+            this.groupBoxRow23Data.Controls.Add(this.checkBoxRow23DataBit4);
             this.groupBoxRow23Data.Controls.Add(this.label48);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox7);
-            this.groupBoxRow23Data.Controls.Add(this.checkBox8);
-            this.groupBoxRow23Data.Controls.Add(this.label49);
             this.groupBoxRow23Data.Controls.Add(this.label50);
-            this.groupBoxRow23Data.Location = new System.Drawing.Point(306, 693);
+            this.groupBoxRow23Data.Location = new System.Drawing.Point(308, 780);
             this.groupBoxRow23Data.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxRow23Data.Name = "groupBoxRow23Data";
             this.groupBoxRow23Data.Padding = new System.Windows.Forms.Padding(2);
@@ -821,27 +1254,44 @@
             this.groupBoxRow23Data.TabIndex = 167;
             this.groupBoxRow23Data.TabStop = false;
             // 
-            // checkBox1
+            // comboBoxRow23DataBits0_3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(223, 26);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 151;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.comboBoxRow23DataBits0_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRow23DataBits0_3.FormattingEnabled = true;
+            this.comboBoxRow23DataBits0_3.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.comboBoxRow23DataBits0_3.Location = new System.Drawing.Point(171, 26);
+            this.comboBoxRow23DataBits0_3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxRow23DataBits0_3.Name = "comboBoxRow23DataBits0_3";
+            this.comboBoxRow23DataBits0_3.Size = new System.Drawing.Size(80, 21);
+            this.comboBoxRow23DataBits0_3.TabIndex = 159;
+            this.comboBoxRow23DataBits0_3.SelectedIndexChanged += new System.EventHandler(this.comboBoxRow23DataBits0_3_SelectedIndexChanged);
             // 
-            // checkBox2
+            // checkBoxRow23DataBit7
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(19, 26);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 141;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBoxRow23DataBit7.AutoSize = true;
+            this.checkBoxRow23DataBit7.Location = new System.Drawing.Point(19, 26);
+            this.checkBoxRow23DataBit7.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow23DataBit7.Name = "checkBoxRow23DataBit7";
+            this.checkBoxRow23DataBit7.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow23DataBit7.TabIndex = 141;
+            this.checkBoxRow23DataBit7.UseVisualStyleBackColor = true;
+            this.checkBoxRow23DataBit7.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label27
             // 
@@ -853,16 +1303,16 @@
             this.label27.TabIndex = 142;
             this.label27.Text = "RESER";
             // 
-            // checkBox3
+            // checkBoxRow23DataBit6
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(60, 26);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 143;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBoxRow23DataBit6.AutoSize = true;
+            this.checkBoxRow23DataBit6.Location = new System.Drawing.Point(60, 26);
+            this.checkBoxRow23DataBit6.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow23DataBit6.Name = "checkBoxRow23DataBit6";
+            this.checkBoxRow23DataBit6.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow23DataBit6.TabIndex = 143;
+            this.checkBoxRow23DataBit6.UseVisualStyleBackColor = true;
+            this.checkBoxRow23DataBit6.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label28
             // 
@@ -874,26 +1324,16 @@
             this.label28.TabIndex = 144;
             this.label28.Text = "RESER";
             // 
-            // checkBox4
+            // checkBoxRow23DataBit5
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(100, 26);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 145;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(292, 12);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(44, 13);
-            this.label29.TabIndex = 156;
-            this.label29.Text = "RESER";
+            this.checkBoxRow23DataBit5.AutoSize = true;
+            this.checkBoxRow23DataBit5.Location = new System.Drawing.Point(100, 26);
+            this.checkBoxRow23DataBit5.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow23DataBit5.Name = "checkBoxRow23DataBit5";
+            this.checkBoxRow23DataBit5.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow23DataBit5.TabIndex = 145;
+            this.checkBoxRow23DataBit5.UseVisualStyleBackColor = true;
+            this.checkBoxRow23DataBit5.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label30
             // 
@@ -905,37 +1345,16 @@
             this.label30.TabIndex = 146;
             this.label30.Text = "RESER";
             // 
-            // checkBox5
+            // checkBoxRow23DataBit4
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(305, 26);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 155;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(142, 26);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 147;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(251, 12);
-            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(44, 13);
-            this.label47.TabIndex = 154;
-            this.label47.Text = "RESER";
+            this.checkBoxRow23DataBit4.AutoSize = true;
+            this.checkBoxRow23DataBit4.Location = new System.Drawing.Point(142, 26);
+            this.checkBoxRow23DataBit4.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxRow23DataBit4.Name = "checkBoxRow23DataBit4";
+            this.checkBoxRow23DataBit4.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRow23DataBit4.TabIndex = 147;
+            this.checkBoxRow23DataBit4.UseVisualStyleBackColor = true;
+            this.checkBoxRow23DataBit4.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // label48
             // 
@@ -947,51 +1366,19 @@
             this.label48.TabIndex = 148;
             this.label48.Text = "RESER";
             // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(264, 26);
-            this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 153;
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(182, 26);
-            this.checkBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 149;
-            this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(210, 12);
-            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(44, 13);
-            this.label49.TabIndex = 152;
-            this.label49.Text = "RESER";
-            // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Location = new System.Drawing.Point(169, 12);
             this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(44, 13);
+            this.label50.Size = new System.Drawing.Size(54, 13);
             this.label50.TabIndex = 150;
-            this.label50.Text = "RESER";
+            this.label50.Text = "Retry_Cnt";
             // 
             // textBoxRow23Value
             // 
-            this.textBoxRow23Value.Location = new System.Drawing.Point(168, 705);
+            this.textBoxRow23Value.Location = new System.Drawing.Point(170, 792);
             this.textBoxRow23Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow23Value.Name = "textBoxRow23Value";
             this.textBoxRow23Value.ReadOnly = true;
@@ -1000,7 +1387,7 @@
             // 
             // textBox61
             // 
-            this.textBox61.Location = new System.Drawing.Point(79, 705);
+            this.textBox61.Location = new System.Drawing.Point(81, 792);
             this.textBox61.Margin = new System.Windows.Forms.Padding(2);
             this.textBox61.Name = "textBox61";
             this.textBox61.ReadOnly = true;
@@ -1010,7 +1397,7 @@
             // 
             // textBoxRow21Value
             // 
-            this.textBoxRow21Value.Location = new System.Drawing.Point(168, 646);
+            this.textBoxRow21Value.Location = new System.Drawing.Point(170, 685);
             this.textBoxRow21Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow21Value.Name = "textBoxRow21Value";
             this.textBoxRow21Value.ReadOnly = true;
@@ -1019,7 +1406,7 @@
             // 
             // textBox62
             // 
-            this.textBox62.Location = new System.Drawing.Point(8, 705);
+            this.textBox62.Location = new System.Drawing.Point(10, 792);
             this.textBox62.Margin = new System.Windows.Forms.Padding(2);
             this.textBox62.Name = "textBox62";
             this.textBox62.ReadOnly = true;
@@ -1030,7 +1417,7 @@
             // 
             // textBox58
             // 
-            this.textBox58.Location = new System.Drawing.Point(78, 646);
+            this.textBox58.Location = new System.Drawing.Point(80, 685);
             this.textBox58.Margin = new System.Windows.Forms.Padding(2);
             this.textBox58.Name = "textBox58";
             this.textBox58.ReadOnly = true;
@@ -1040,7 +1427,7 @@
             // 
             // textBox59
             // 
-            this.textBox59.Location = new System.Drawing.Point(7, 646);
+            this.textBox59.Location = new System.Drawing.Point(9, 685);
             this.textBox59.Margin = new System.Windows.Forms.Padding(2);
             this.textBox59.Name = "textBox59";
             this.textBox59.ReadOnly = true;
@@ -1051,7 +1438,7 @@
             // 
             // textBoxRow20Value
             // 
-            this.textBoxRow20Value.Location = new System.Drawing.Point(168, 619);
+            this.textBoxRow20Value.Location = new System.Drawing.Point(168, 629);
             this.textBoxRow20Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow20Value.Name = "textBoxRow20Value";
             this.textBoxRow20Value.ReadOnly = true;
@@ -1060,7 +1447,7 @@
             // 
             // textBox54
             // 
-            this.textBox54.Location = new System.Drawing.Point(78, 619);
+            this.textBox54.Location = new System.Drawing.Point(78, 629);
             this.textBox54.Margin = new System.Windows.Forms.Padding(2);
             this.textBox54.Name = "textBox54";
             this.textBox54.ReadOnly = true;
@@ -1070,7 +1457,7 @@
             // 
             // textBox55
             // 
-            this.textBox55.Location = new System.Drawing.Point(7, 619);
+            this.textBox55.Location = new System.Drawing.Point(7, 629);
             this.textBox55.Margin = new System.Windows.Forms.Padding(2);
             this.textBox55.Name = "textBox55";
             this.textBox55.ReadOnly = true;
@@ -1114,7 +1501,7 @@
             this.textBoxRow18Data.Location = new System.Drawing.Point(305, 571);
             this.textBoxRow18Data.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow18Data.Name = "textBoxRow18Data";
-            this.textBoxRow18Data.Size = new System.Drawing.Size(48, 20);
+            this.textBoxRow18Data.Size = new System.Drawing.Size(22, 20);
             this.textBoxRow18Data.TabIndex = 193;
             this.textBoxRow18Data.TextChanged += new System.EventHandler(this.textBoxRow18Data_TextChanged);
             // 
@@ -1124,7 +1511,7 @@
             this.textBoxRow18Value.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRow18Value.Name = "textBoxRow18Value";
             this.textBoxRow18Value.ReadOnly = true;
-            this.textBoxRow18Value.Size = new System.Drawing.Size(48, 20);
+            this.textBoxRow18Value.Size = new System.Drawing.Size(22, 20);
             this.textBoxRow18Value.TabIndex = 192;
             // 
             // textBox46
@@ -1410,6 +1797,7 @@
             // 
             // groupBoxRow9Data
             // 
+            this.groupBoxRow9Data.Controls.Add(this.buttonRow9DataBits2);
             this.groupBoxRow9Data.Controls.Add(this.buttonRow9DataBit0);
             this.groupBoxRow9Data.Controls.Add(this.buttonRow9DataBit1);
             this.groupBoxRow9Data.Controls.Add(this.checkBoxRow9DataBit4);
@@ -1422,7 +1810,6 @@
             this.groupBoxRow9Data.Controls.Add(this.groupBoxRow9DataBit5);
             this.groupBoxRow9Data.Controls.Add(this.label23);
             this.groupBoxRow9Data.Controls.Add(this.label20);
-            this.groupBoxRow9Data.Controls.Add(this.checkBoxRow9DataBit2);
             this.groupBoxRow9Data.Controls.Add(this.label22);
             this.groupBoxRow9Data.Controls.Add(this.label21);
             this.groupBoxRow9Data.Location = new System.Drawing.Point(305, 314);
@@ -1432,6 +1819,16 @@
             this.groupBoxRow9Data.Size = new System.Drawing.Size(426, 73);
             this.groupBoxRow9Data.TabIndex = 164;
             this.groupBoxRow9Data.TabStop = false;
+            // 
+            // buttonRow9DataBits2
+            // 
+            this.buttonRow9DataBits2.Location = new System.Drawing.Point(224, 28);
+            this.buttonRow9DataBits2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRow9DataBits2.Name = "buttonRow9DataBits2";
+            this.buttonRow9DataBits2.Size = new System.Drawing.Size(21, 19);
+            this.buttonRow9DataBits2.TabIndex = 127;
+            this.buttonRow9DataBits2.UseVisualStyleBackColor = true;
+            this.buttonRow9DataBits2.Click += new System.EventHandler(this.buttonRow9DataBits2_Click);
             // 
             // buttonRow9DataBit0
             // 
@@ -1586,17 +1983,6 @@
             this.label20.TabIndex = 123;
             this.label20.Text = "RX_CL";
             // 
-            // checkBoxRow9DataBit2
-            // 
-            this.checkBoxRow9DataBit2.AutoSize = true;
-            this.checkBoxRow9DataBit2.Location = new System.Drawing.Point(230, 28);
-            this.checkBoxRow9DataBit2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow9DataBit2.Name = "checkBoxRow9DataBit2";
-            this.checkBoxRow9DataBit2.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow9DataBit2.TabIndex = 118;
-            this.checkBoxRow9DataBit2.UseVisualStyleBackColor = true;
-            this.checkBoxRow9DataBit2.CheckedChanged += new System.EventHandler(this.checkBoxRow9DataBit2_CheckedChanged);
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1619,22 +2005,14 @@
             // 
             // groupBoxRow8Data
             // 
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit2);
+            this.groupBoxRow8Data.Controls.Add(this.comboBoxRow8DataBits0_2);
+            this.groupBoxRow8Data.Controls.Add(this.comboBoxRow8DataBits3_5);
             this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit7);
             this.groupBoxRow8Data.Controls.Add(this.label38);
             this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit6);
             this.groupBoxRow8Data.Controls.Add(this.label37);
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit5);
-            this.groupBoxRow8Data.Controls.Add(this.label31);
             this.groupBoxRow8Data.Controls.Add(this.label36);
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit0);
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit4);
-            this.groupBoxRow8Data.Controls.Add(this.label32);
-            this.groupBoxRow8Data.Controls.Add(this.label35);
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit1);
-            this.groupBoxRow8Data.Controls.Add(this.checkBoxRow8DataBit3);
             this.groupBoxRow8Data.Controls.Add(this.label33);
-            this.groupBoxRow8Data.Controls.Add(this.label34);
             this.groupBoxRow8Data.Location = new System.Drawing.Point(305, 260);
             this.groupBoxRow8Data.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxRow8Data.Name = "groupBoxRow8Data";
@@ -1643,16 +2021,45 @@
             this.groupBoxRow8Data.TabIndex = 163;
             this.groupBoxRow8Data.TabStop = false;
             // 
-            // checkBoxRow8DataBit2
+            // comboBoxRow8DataBits0_2
             // 
-            this.checkBoxRow8DataBit2.AutoSize = true;
-            this.checkBoxRow8DataBit2.Location = new System.Drawing.Point(223, 26);
-            this.checkBoxRow8DataBit2.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit2.Name = "checkBoxRow8DataBit2";
-            this.checkBoxRow8DataBit2.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit2.TabIndex = 151;
-            this.checkBoxRow8DataBit2.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit2.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            this.comboBoxRow8DataBits0_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRow8DataBits0_2.FormattingEnabled = true;
+            this.comboBoxRow8DataBits0_2.Items.AddRange(new object[] {
+            "PIO0",
+            "PIO1",
+            "PIO2",
+            "PIO3",
+            "PIO4",
+            "PIO5",
+            "PIO6",
+            "None"});
+            this.comboBoxRow8DataBits0_2.Location = new System.Drawing.Point(182, 24);
+            this.comboBoxRow8DataBits0_2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxRow8DataBits0_2.Name = "comboBoxRow8DataBits0_2";
+            this.comboBoxRow8DataBits0_2.Size = new System.Drawing.Size(80, 21);
+            this.comboBoxRow8DataBits0_2.TabIndex = 158;
+            this.comboBoxRow8DataBits0_2.SelectedIndexChanged += new System.EventHandler(this.comboBoxRow8DataBits0_2_SelectedIndexChanged);
+            // 
+            // comboBoxRow8DataBits3_5
+            // 
+            this.comboBoxRow8DataBits3_5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRow8DataBits3_5.FormattingEnabled = true;
+            this.comboBoxRow8DataBits3_5.Items.AddRange(new object[] {
+            "PIO0",
+            "PIO1",
+            "PIO2",
+            "PIO3",
+            "PIO4",
+            "PIO5",
+            "PIO6",
+            "None"});
+            this.comboBoxRow8DataBits3_5.Location = new System.Drawing.Point(90, 24);
+            this.comboBoxRow8DataBits3_5.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxRow8DataBits3_5.Name = "comboBoxRow8DataBits3_5";
+            this.comboBoxRow8DataBits3_5.Size = new System.Drawing.Size(80, 21);
+            this.comboBoxRow8DataBits3_5.TabIndex = 157;
+            this.comboBoxRow8DataBits3_5.SelectedIndexChanged += new System.EventHandler(this.comboBoxRow8DataBits3_5_SelectedIndexChanged);
             // 
             // checkBoxRow8DataBit7
             // 
@@ -1663,7 +2070,7 @@
             this.checkBoxRow8DataBit7.Size = new System.Drawing.Size(15, 14);
             this.checkBoxRow8DataBit7.TabIndex = 141;
             this.checkBoxRow8DataBit7.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit7.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            this.checkBoxRow8DataBit7.CheckedChanged += new System.EventHandler(this.checkBoxRow8DataBit7_CheckedChanged);
             // 
             // label38
             // 
@@ -1684,7 +2091,7 @@
             this.checkBoxRow8DataBit6.Size = new System.Drawing.Size(15, 14);
             this.checkBoxRow8DataBit6.TabIndex = 143;
             this.checkBoxRow8DataBit6.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit6.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            this.checkBoxRow8DataBit6.CheckedChanged += new System.EventHandler(this.checkBoxRow8DataBit6_CheckedChanged);
             // 
             // label37
             // 
@@ -1692,124 +2099,29 @@
             this.label37.Location = new System.Drawing.Point(47, 12);
             this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(44, 13);
+            this.label37.Size = new System.Drawing.Size(42, 13);
             this.label37.TabIndex = 144;
-            this.label37.Text = "RESER";
-            // 
-            // checkBoxRow8DataBit5
-            // 
-            this.checkBoxRow8DataBit5.AutoSize = true;
-            this.checkBoxRow8DataBit5.Location = new System.Drawing.Point(100, 26);
-            this.checkBoxRow8DataBit5.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit5.Name = "checkBoxRow8DataBit5";
-            this.checkBoxRow8DataBit5.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit5.TabIndex = 145;
-            this.checkBoxRow8DataBit5.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit5.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(292, 12);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(49, 13);
-            this.label31.TabIndex = 156;
-            this.label31.Text = "ENABLE";
+            this.label37.Text = "LATCH";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(88, 12);
+            this.label36.Location = new System.Drawing.Point(90, 10);
             this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(44, 13);
+            this.label36.Size = new System.Drawing.Size(69, 13);
             this.label36.TabIndex = 146;
-            this.label36.Text = "RESER";
-            // 
-            // checkBoxRow8DataBit0
-            // 
-            this.checkBoxRow8DataBit0.AutoSize = true;
-            this.checkBoxRow8DataBit0.Location = new System.Drawing.Point(305, 26);
-            this.checkBoxRow8DataBit0.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit0.Name = "checkBoxRow8DataBit0";
-            this.checkBoxRow8DataBit0.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit0.TabIndex = 155;
-            this.checkBoxRow8DataBit0.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit0.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
-            // 
-            // checkBoxRow8DataBit4
-            // 
-            this.checkBoxRow8DataBit4.AutoSize = true;
-            this.checkBoxRow8DataBit4.Location = new System.Drawing.Point(142, 26);
-            this.checkBoxRow8DataBit4.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit4.Name = "checkBoxRow8DataBit4";
-            this.checkBoxRow8DataBit4.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit4.TabIndex = 147;
-            this.checkBoxRow8DataBit4.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit4.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(251, 12);
-            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(44, 13);
-            this.label32.TabIndex = 154;
-            this.label32.Text = "RESER";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(129, 12);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(44, 13);
-            this.label35.TabIndex = 148;
-            this.label35.Text = "RESER";
-            // 
-            // checkBoxRow8DataBit1
-            // 
-            this.checkBoxRow8DataBit1.AutoSize = true;
-            this.checkBoxRow8DataBit1.Location = new System.Drawing.Point(264, 26);
-            this.checkBoxRow8DataBit1.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit1.Name = "checkBoxRow8DataBit1";
-            this.checkBoxRow8DataBit1.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit1.TabIndex = 153;
-            this.checkBoxRow8DataBit1.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit1.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
-            // 
-            // checkBoxRow8DataBit3
-            // 
-            this.checkBoxRow8DataBit3.AutoSize = true;
-            this.checkBoxRow8DataBit3.Location = new System.Drawing.Point(182, 26);
-            this.checkBoxRow8DataBit3.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxRow8DataBit3.Name = "checkBoxRow8DataBit3";
-            this.checkBoxRow8DataBit3.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRow8DataBit3.TabIndex = 149;
-            this.checkBoxRow8DataBit3.UseVisualStyleBackColor = true;
-            this.checkBoxRow8DataBit3.CheckedChanged += new System.EventHandler(this.checkBoxReadOnly_CheckChanged);
+            this.label36.Text = "TX_INT_PIN";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(210, 12);
+            this.label33.Location = new System.Drawing.Point(180, 10);
             this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(44, 13);
+            this.label33.Size = new System.Drawing.Size(70, 13);
             this.label33.TabIndex = 152;
-            this.label33.Text = "RESER";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(169, 12);
-            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(44, 13);
-            this.label34.TabIndex = 150;
-            this.label34.Text = "RESER";
+            this.label33.Text = "RX_INT_PIN";
             // 
             // groupBoxRow7Data
             // 
@@ -1840,7 +2152,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(129, 15);
+            this.label43.Location = new System.Drawing.Point(155, 15);
             this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(44, 13);
@@ -1850,29 +2162,29 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(318, 15);
+            this.label39.Location = new System.Drawing.Point(323, 15);
             this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(42, 13);
+            this.label39.Size = new System.Drawing.Size(44, 13);
             this.label39.TabIndex = 140;
-            this.label39.Text = "RF_OK";
+            this.label39.Text = "RESER";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(251, 15);
+            this.label40.Location = new System.Drawing.Point(277, 15);
             this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 13);
+            this.label40.Size = new System.Drawing.Size(44, 13);
             this.label40.TabIndex = 138;
-            this.label40.Text = "EPROM_OK";
+            this.label40.Text = "RESER";
             // 
             // checkBoxRow7DataBit0
             // 
             this.checkBoxRow7DataBit0.AutoSize = true;
             this.checkBoxRow7DataBit0.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit0.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit0.Location = new System.Drawing.Point(330, 28);
+            this.checkBoxRow7DataBit0.Location = new System.Drawing.Point(335, 28);
             this.checkBoxRow7DataBit0.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit0.Name = "checkBoxRow7DataBit0";
             this.checkBoxRow7DataBit0.Size = new System.Drawing.Size(15, 14);
@@ -1885,7 +2197,7 @@
             this.checkBoxRow7DataBit1.AutoSize = true;
             this.checkBoxRow7DataBit1.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit1.Location = new System.Drawing.Point(264, 28);
+            this.checkBoxRow7DataBit1.Location = new System.Drawing.Point(290, 28);
             this.checkBoxRow7DataBit1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit1.Name = "checkBoxRow7DataBit1";
             this.checkBoxRow7DataBit1.Size = new System.Drawing.Size(15, 14);
@@ -1909,7 +2221,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(210, 15);
+            this.label41.Location = new System.Drawing.Point(236, 15);
             this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(44, 13);
@@ -1922,16 +2234,16 @@
             this.label46.Location = new System.Drawing.Point(6, 15);
             this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(44, 13);
+            this.label46.Size = new System.Drawing.Size(42, 13);
             this.label46.TabIndex = 126;
-            this.label46.Text = "RESER";
+            this.label46.Text = "RF_OK";
             // 
             // checkBoxRow7DataBit2
             // 
             this.checkBoxRow7DataBit2.AutoSize = true;
             this.checkBoxRow7DataBit2.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit2.Location = new System.Drawing.Point(223, 28);
+            this.checkBoxRow7DataBit2.Location = new System.Drawing.Point(249, 28);
             this.checkBoxRow7DataBit2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit2.Name = "checkBoxRow7DataBit2";
             this.checkBoxRow7DataBit2.Size = new System.Drawing.Size(15, 14);
@@ -1944,7 +2256,7 @@
             this.checkBoxRow7DataBit6.AutoSize = true;
             this.checkBoxRow7DataBit6.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit6.Location = new System.Drawing.Point(60, 28);
+            this.checkBoxRow7DataBit6.Location = new System.Drawing.Point(73, 28);
             this.checkBoxRow7DataBit6.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit6.Name = "checkBoxRow7DataBit6";
             this.checkBoxRow7DataBit6.Size = new System.Drawing.Size(15, 14);
@@ -1955,7 +2267,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(169, 15);
+            this.label42.Location = new System.Drawing.Point(195, 15);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(44, 13);
@@ -1968,16 +2280,16 @@
             this.label45.Location = new System.Drawing.Point(47, 15);
             this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(44, 13);
+            this.label45.Size = new System.Drawing.Size(67, 13);
             this.label45.TabIndex = 128;
-            this.label45.Text = "RESER";
+            this.label45.Text = "EPROM_OK";
             // 
             // checkBoxRow7DataBit3
             // 
             this.checkBoxRow7DataBit3.AutoSize = true;
             this.checkBoxRow7DataBit3.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit3.Location = new System.Drawing.Point(182, 28);
+            this.checkBoxRow7DataBit3.Location = new System.Drawing.Point(208, 28);
             this.checkBoxRow7DataBit3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit3.Name = "checkBoxRow7DataBit3";
             this.checkBoxRow7DataBit3.Size = new System.Drawing.Size(15, 14);
@@ -1990,7 +2302,7 @@
             this.checkBoxRow7DataBit5.AutoSize = true;
             this.checkBoxRow7DataBit5.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit5.Location = new System.Drawing.Point(100, 28);
+            this.checkBoxRow7DataBit5.Location = new System.Drawing.Point(126, 28);
             this.checkBoxRow7DataBit5.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit5.Name = "checkBoxRow7DataBit5";
             this.checkBoxRow7DataBit5.Size = new System.Drawing.Size(15, 14);
@@ -2003,7 +2315,7 @@
             this.checkBoxRow7DataBit4.AutoSize = true;
             this.checkBoxRow7DataBit4.BackColor = System.Drawing.SystemColors.Control;
             this.checkBoxRow7DataBit4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxRow7DataBit4.Location = new System.Drawing.Point(142, 28);
+            this.checkBoxRow7DataBit4.Location = new System.Drawing.Point(168, 28);
             this.checkBoxRow7DataBit4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRow7DataBit4.Name = "checkBoxRow7DataBit4";
             this.checkBoxRow7DataBit4.Size = new System.Drawing.Size(15, 14);
@@ -2014,7 +2326,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(88, 15);
+            this.label44.Location = new System.Drawing.Point(114, 15);
             this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(44, 13);
@@ -2883,7 +3195,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
-            this.pictureBox4.Location = new System.Drawing.Point(300, 24);
+            this.pictureBox4.Location = new System.Drawing.Point(302, 111);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(1, 748);
@@ -2903,7 +3215,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.Location = new System.Drawing.Point(163, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(165, 108);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1, 751);
@@ -2923,7 +3235,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(73, 21);
+            this.pictureBox2.Location = new System.Drawing.Point(75, 108);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1, 750);
@@ -3088,11 +3400,13 @@
             this.panel1.Location = new System.Drawing.Point(314, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(766, 573);
+            this.panel1.Size = new System.Drawing.Size(766, 645);
             this.panel1.TabIndex = 175;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.SendButton);
+            this.groupBox4.Controls.Add(this.textBoxSendData);
             this.groupBox4.Controls.Add(this.labelServerStatus);
             this.groupBox4.Controls.Add(this.labelServerTransmitted);
             this.groupBox4.Controls.Add(this.labelServerReceived);
@@ -3102,10 +3416,28 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(300, 100);
+            this.groupBox4.Size = new System.Drawing.Size(300, 157);
             this.groupBox4.TabIndex = 176;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Сервер";
+            // 
+            // SendButton
+            // 
+            this.SendButton.Location = new System.Drawing.Point(232, 100);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(62, 45);
+            this.SendButton.TabIndex = 6;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            // 
+            // textBoxSendData
+            // 
+            this.textBoxSendData.Location = new System.Drawing.Point(5, 100);
+            this.textBoxSendData.Multiline = true;
+            this.textBoxSendData.Name = "textBoxSendData";
+            this.textBoxSendData.Size = new System.Drawing.Size(221, 45);
+            this.textBoxSendData.TabIndex = 5;
             // 
             // labelServerStatus
             // 
@@ -3163,7 +3495,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 592);
+            this.ClientSize = new System.Drawing.Size(1079, 643);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -3177,6 +3509,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDataBits)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBoxRow22Data.ResumeLayout(false);
+            this.groupBoxRow22Data.PerformLayout();
+            this.groupBoxRow21Data.ResumeLayout(false);
+            this.groupBoxRow21Data.PerformLayout();
+            this.groupBoxRow20Data.ResumeLayout(false);
+            this.groupBoxRow20Data.PerformLayout();
             this.groupBoxRow23Data.ResumeLayout(false);
             this.groupBoxRow23Data.PerformLayout();
             this.groupBoxRow9Data.ResumeLayout(false);
@@ -3326,24 +3664,13 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.CheckBox checkBoxRow9DataBit2;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.CheckBox checkBoxRow9DataBit3;
         private System.Windows.Forms.GroupBox groupBoxRow9DataBit5;
         private System.Windows.Forms.RadioButton radioButtonRow9DataBitFsk;
         private System.Windows.Forms.RadioButton radioButtonRow9DataBitLora;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit0;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit1;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit2;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit3;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit4;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.CheckBox checkBoxRow8DataBit5;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.CheckBox checkBoxRow8DataBit6;
         private System.Windows.Forms.Label label38;
@@ -3388,21 +3715,14 @@
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.GroupBox groupBoxRow23Data;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxRow23DataBit7;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBoxRow23DataBit6;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.CheckBox checkBoxRow23DataBit5;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.CheckBox checkBoxRow23DataBit4;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox textBoxRow23Value;
         private System.Windows.Forms.TextBox textBox61;
@@ -3449,9 +3769,51 @@
         private System.Windows.Forms.Label labelServerTransmitted;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBoxRow19Data;
-        private System.Windows.Forms.CheckBox checkBoxRow22Data;
-        private System.Windows.Forms.CheckBox checkBoxRow21Data;
-        private System.Windows.Forms.CheckBox checkBoxRow20Data;
+        private System.Windows.Forms.ComboBox comboBoxRow8DataBits3_5;
+        private System.Windows.Forms.ComboBox comboBoxRow8DataBits0_2;
+        private System.Windows.Forms.Button buttonRow9DataBits2;
+        private System.Windows.Forms.ComboBox comboBoxRow23DataBits0_3;
+        private System.Windows.Forms.GroupBox groupBoxRow20Data;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit5;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.GroupBox groupBoxRow22Data;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit1;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit0;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit3;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit2;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit5;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.CheckBox checkBoxRow22DataBit4;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.GroupBox groupBoxRow21Data;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit1;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit0;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit3;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit2;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit5;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.CheckBox checkBoxRow21DataBit4;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit0;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit3;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.CheckBox checkBoxRow20DataBit2;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button SendButton;
+        private System.Windows.Forms.TextBox textBoxSendData;
     }
 }
 

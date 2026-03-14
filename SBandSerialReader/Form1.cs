@@ -177,12 +177,14 @@ namespace SBandSerialReader
                 comboBoxRow17Data,
                 textBoxRow18Data,
                 comboBoxRow19Data,
-                checkBoxRow20Data,
-                checkBoxRow21Data,
-                checkBoxRow22Data,
-                new Control(),
+                groupBoxRow20Data,
+                groupBoxRow21Data,
+                groupBoxRow22Data,
+                groupBoxRow23Data,
                 textBoxRow24Data
             };
+            textBoxTxBufferHEX.Text = "717765727479";
+            textBoxTxBufferASCII.Text = "qwerty";
         }
 
         private void OnDataReceived(int clientId, byte[] data)
@@ -201,7 +203,7 @@ namespace SBandSerialReader
 
         private static void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 41);
+            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 43);
             if (serialPort.IsOpen)
             {
                 serialPort.Write(read, 0, read.Length);
@@ -215,7 +217,7 @@ namespace SBandSerialReader
             isReadingRegs = true;
             using (BeginUiUpdate())
             {
-                RegistersManagerUI.WriteRegisters(startReg, regs, HexValueControls, VarDataControls);
+                RegistersManagerUI.WriteRegisters(startReg, regs);
             }
             isReadingRegs = false;
         }
@@ -433,7 +435,7 @@ namespace SBandSerialReader
 
         private void button1_Click(object sender, EventArgs e)
         {
-            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 41);
+            byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 43);
             if (serialPort.IsOpen)
             {
                 serialPort.Write(read, 0, read.Length);
@@ -647,7 +649,7 @@ namespace SBandSerialReader
                 byte mask = (byte)(1 << bitIndex);
                 currentConfig = (byte)((currentConfig & ~mask) | ((bitStatus << bitIndex) & mask));
 
-                if (bitIndex != 0 && bitIndex != 1)
+                if (bitIndex != 0 && bitIndex != 1 && bitIndex != 2)
                 {
                     HexValueControls[(int)RegMap.Config].Text = DataConverter.ByteToStringHEX(currentConfig);
                 }
@@ -660,6 +662,123 @@ namespace SBandSerialReader
             }
             catch { }
         }
+
+        private void ChangeIntConfig(bool isChecked, int bitIndex)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            try
+            {
+                byte currentConfig = 0;
+                if (HexValueControls[(int)RegMap.InterruptConfig].Text != "")
+                {
+                    currentConfig = DataConverter.HEXStringToByte(HexValueControls[(int)RegMap.InterruptConfig].Text);
+                }
+                byte bitStatus = Convert.ToByte(isChecked);
+
+                byte mask = (byte)(1 << bitIndex);
+                currentConfig = (byte)((currentConfig & ~mask) | ((bitStatus << bitIndex) & mask));
+
+                HexValueControls[(int)RegMap.InterruptConfig].Text = DataConverter.ByteToStringHEX(currentConfig);
+                
+                if (serialPort.IsOpen)
+                {
+                    byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (int)RegMap.InterruptConfig, 1, new byte[] { currentConfig });
+                    serialPort.Write(cmd, 0, cmd.Length);
+                }
+            }
+            catch { }
+        }
+
+        private void ChangeIntConfig(bool[] isCheckeds, int[] bitIndexs)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            try
+            {
+                byte currentConfig = 0;
+                if (HexValueControls[(int)RegMap.InterruptConfig].Text != "")
+                {
+                    currentConfig = DataConverter.HEXStringToByte(HexValueControls[(int)RegMap.InterruptConfig].Text);
+                }
+
+                for (int i = 0; i < isCheckeds.Length; i++)
+                {
+                    bool isChecked = isCheckeds[i];
+                    int bitIndex = bitIndexs[i];
+
+                    byte bitStatus = Convert.ToByte(isChecked);
+
+                    byte mask = (byte)(1 << bitIndex);
+                    currentConfig = (byte)((currentConfig & ~mask) | ((bitStatus << bitIndex) & mask));
+                }
+
+                HexValueControls[(int)RegMap.InterruptConfig].Text = DataConverter.ByteToStringHEX(currentConfig);
+
+                if (serialPort.IsOpen)
+                {
+                    byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (int)RegMap.InterruptConfig, 1, new byte[] { currentConfig });
+                    serialPort.Write(cmd, 0, cmd.Length);
+                }
+            }
+            catch { }
+        }
+
+        private void ChangeStackConfig(bool[] isCheckeds, int[] bitIndexs)
+        {
+            if (isReadingRegs)
+            {
+                return;
+            }
+            if (IsUiUpdating)
+            {
+                return;
+            }
+
+            try
+            {
+                byte currentConfig = 0;
+                if (HexValueControls[(int)RegMap.RadioStackCgf].Text != "")
+                {
+                    currentConfig = DataConverter.HEXStringToByte(HexValueControls[(int)RegMap.RadioStackCgf].Text);
+                }
+
+                for (int i = 0; i < isCheckeds.Length; i++)
+                {
+                    bool isChecked = isCheckeds[i];
+                    int bitIndex = bitIndexs[i];
+
+                    byte bitStatus = Convert.ToByte(isChecked);
+
+                    byte mask = (byte)(1 << bitIndex);
+                    currentConfig = (byte)((currentConfig & ~mask) | ((bitStatus << bitIndex) & mask));
+                }
+
+                HexValueControls[(int)RegMap.RadioStackCgf].Text = DataConverter.ByteToStringHEX(currentConfig);
+
+                if (serialPort.IsOpen)
+                {
+                    byte[] cmd = CommandGenerator.RegisterWrite(deviceAddress, (int)RegMap.RadioStackCgf, 1, new byte[] { currentConfig });
+                    serialPort.Write(cmd, 0, cmd.Length);
+                }
+            }
+            catch { }
+        }
+
         private void checkBoxRow9DataBit7_CheckedChanged(object sender, EventArgs e)
         {
             ChangeConfig((sender as CheckBox).Checked, 7);
@@ -932,10 +1051,11 @@ namespace SBandSerialReader
                     return;
                 }
                 VarDataControls[(int)RegMap.Power].BackColor = Color.White;
+                byte hexData = checked((byte)data);
 
-                if (!isPowerEqual(DataConverter.HEXStringToByte(HexValueControls[(int)RegMap.Power].Text), data))
+                if (!isPowerEqual(DataConverter.HEXStringToByte(HexValueControls[(int)RegMap.Power].Text), hexData))
                 {
-                    HexValueControls[(int)RegMap.Power].Text = DataConverter.ByteToStringHEX((byte)(data + 10));
+                    HexValueControls[(int)RegMap.Power].Text = DataConverter.ByteToStringHEX(hexData);
                 }
             }
             catch
@@ -1243,11 +1363,19 @@ namespace SBandSerialReader
 
         private void textBoxRow24Value_TextChanged(object sender, EventArgs e)
         {
-            if(textBoxRow24Value.Text.Length > 32)
+            string hexSymblos = "0123456789ABCDEFabcdef";
+            if (hexSymblos.Contains(textBoxRow24Value.Text[textBoxRow24Value.Text.Length-1]) == false)
+            {
+                textBoxRow24Value.Text=textBoxRow24Value.Text.Substring(0,textBoxRow24Value.Text.Length - 1);
+                return;
+            }
+
+            if(textBoxRow24Value.Text.Length > 32 || textBoxRow24Value.Text.Length < 32)
             {
                 textBoxRow24Value.BackColor = Color.OrangeRed;
                 return;
             }
+
 
             try
             {
@@ -1439,7 +1567,7 @@ namespace SBandSerialReader
             {
                 int data = int.Parse(VarDataControls[(int)RegMap.FskFdev].Text);
 
-                if (data < 0 || data > 201)
+                if (data < 0 || data > 200)
                 {
                     VarDataControls[(int)RegMap.FskFdev].BackColor = Color.OrangeRed;
                     return;
@@ -1612,6 +1740,140 @@ namespace SBandSerialReader
             }
 
             HexValueControls[(int)RegMap.PioIn].Text = ((CheckBox)sender).Checked ? "1" : "0";
+        }
+
+        private void buttonRow9DataBits2_Click(object sender, EventArgs e)
+        {
+            ChangeConfig(true, 2);
+        }
+
+        private void checkBoxRow8DataBit7_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeIntConfig((sender as CheckBox).Checked, 7);
+        }
+
+        private void checkBoxRow8DataBit6_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeIntConfig((sender as CheckBox).Checked, 6);
+        }
+
+        private void comboBoxRow8DataBits3_5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBoxRow8DataBits3_5.SelectedIndex;
+            bool[] isCheckeds = new bool[3];
+            for (int i = 0; i < 3; i++)
+            {
+                isCheckeds[i] = ((selectedIndex >> i) & 1) == 0 ? false : true;
+            }
+
+            int[] bitIndexs = new int[] { 3, 4, 5 };
+            ChangeIntConfig(isCheckeds, bitIndexs);
+        }
+
+        private void comboBoxRow8DataBits0_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBoxRow8DataBits0_2.SelectedIndex;
+            bool[] isCheckeds = new bool[3];
+            for (int i = 0; i < 3; i++)
+            {
+                isCheckeds[i] = ((selectedIndex >> i) & 1) == 0 ? false : true;
+            }
+
+            int[] bitIndexs = new int[] { 0, 1, 2 };
+            ChangeIntConfig(isCheckeds, bitIndexs);
+        }
+
+        private void comboBoxRow23DataBits0_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = comboBoxRow23DataBits0_3.SelectedIndex;
+            bool[] isCheckeds = new bool[5];
+            for (int i = 0; i < 5; i++)
+            {
+                isCheckeds[i] = ((selectedIndex >> i) & 1) == 0 ? false : true;
+            }
+
+            int[] bitIndexs = new int[] { 0, 1, 2, 3, 4 };
+            ChangeStackConfig(isCheckeds, bitIndexs);
+        }
+
+        private void checkBoxRow20DataBit_CheckedChanged(object sender, EventArgs e)
+        {
+            int summarize = 0;
+            foreach (Control control in groupBoxRow20Data.Controls)
+            {
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = control as CheckBox;
+                    switch (checkBox.Name)
+                    {
+                        case "checkBoxRow20DataBit0":
+                            summarize += 1 * (checkBoxRow20DataBit0.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow20DataBit1":
+                            summarize += 2 * (checkBoxRow20DataBit1.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow20DataBit2":
+                            summarize += 4 * (checkBoxRow20DataBit2.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow20DataBit3":
+                            summarize += 8 * (checkBoxRow20DataBit3.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow20DataBit4":
+                            summarize += 16 * (checkBoxRow20DataBit4.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow20DataBit5":
+                            summarize += 32 * (checkBoxRow20DataBit5.Checked ? 1 : 0);
+                            break;
+                    }
+                }
+                    
+            }
+
+            textBoxRow20Value.Text = DataConverter.ByteToStringHEX((byte)summarize);
+        }
+        private void checkBoxRow21DataBit_CheckedChanged(object sender, EventArgs e)
+        {
+            int summarize = 0;
+            foreach (Control control in groupBoxRow21Data.Controls)
+            {
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = control as CheckBox;
+                    switch (checkBox.Name)
+                    {
+                        case "checkBoxRow21DataBit0":
+                            summarize += 1 * (checkBoxRow21DataBit0.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow21DataBit1":
+                            summarize += 2 * (checkBoxRow21DataBit1.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow21DataBit2":
+                            summarize += 4 * (checkBoxRow21DataBit2.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow21DataBit3":
+                            summarize += 8 * (checkBoxRow21DataBit3.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow21DataBit4":
+                            summarize += 16 * (checkBoxRow21DataBit4.Checked ? 1 : 0);
+                            break;
+                        case "checkBoxRow21DataBit5":
+                            summarize += 32 * (checkBoxRow21DataBit5.Checked ? 1 : 0);
+                            break;
+                    }
+                }
+            }
+
+            textBoxRow21Value.Text = DataConverter.ByteToStringHEX((byte)summarize);
+        }
+
+        private void textBoxRow24Value_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private async void SendButton_Click(object sender, EventArgs e)
+        {
+            await server.SendAsync(110, DataConverter.ASCIIStringToByteArray(textBoxSendData.Text));
         }
     }
 }
