@@ -20,6 +20,7 @@ namespace SBandSerialReader
     {
         private const int deviceAddress = 0x80;
         private static volatile SerialPort serialPort;
+        private static CancellationTokenSource cts;
 
         private TcpServer server = new TcpServer();
         private List<int> _clients = new List<int>();
@@ -88,6 +89,7 @@ namespace SBandSerialReader
             serialPort.Parity = Parity.None;
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;
+            cts = new CancellationTokenSource();
 
             aTimer = new System.Timers.Timer(500);
             aTimer.Elapsed += OnTimedEvent;
@@ -225,7 +227,12 @@ namespace SBandSerialReader
         }
 
 
-
+        public void OnPortDisconnected()
+        {
+            pictureBox1.BackColor = Color.OrangeRed;
+            buttonConnectComPort.Text = "Подключиться";
+            labelConnectionStatus.Text = "Отключён";
+        }
         public void WriteRegsAsync(byte startReg, byte[] regs)
         {
             isReadingRegs = true;
@@ -306,7 +313,7 @@ namespace SBandSerialReader
             refreshSerialPorts();
         }
 
-        private void refreshSerialPorts()
+        public void refreshSerialPorts()
         {
             comboBoxSelectedPort.Items.Clear();
             string[] ports = SerialPort.GetPortNames();
@@ -322,7 +329,7 @@ namespace SBandSerialReader
                     serialPort.PortName = comboBoxSelectedPort.SelectedItem.ToString();
                     serialPort.Open();
 
-                    SerialReader serialReader = new SerialReader(serialPort, this);
+                    SerialReader serialReader = new SerialReader(serialPort, this, cts.Token);
                     Thread readingThread = new Thread(serialReader.ReadBytes);
                     readingThread.IsBackground = true;
                     readingThread.Start();
