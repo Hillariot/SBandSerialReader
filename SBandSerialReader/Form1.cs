@@ -251,7 +251,7 @@ namespace SBandSerialReader
             string asciiData = DataConverter.ByteArrayToStringASCII(data);
 
             textBoxRxBufferASCII.Text = asciiData;
-            textBoxRxBufferHEX.Text = hexData;
+            textBoxRxBufferHEX.Text += Environment.NewLine + hexData;
 
             WriteTxToServer(data);
 
