@@ -320,7 +320,7 @@ namespace SBandSerialReader
             string asciiData = DataConverter.ByteArrayToStringASCII(data);
 
             textBoxRxBufferASCII.Text = asciiData;
-            textBoxRxBufferHEX.Text += Environment.NewLine + hexData;
+            textBoxRxBufferHEX.AppendText(hexData + Environment.NewLine);
 
             WriteTxToServer(data);
 
@@ -689,7 +689,7 @@ namespace SBandSerialReader
             if (serialPort.IsOpen)
             {
                 serialPort.Write(write, 0, write.Length);
-                textBoxTxBufferHEXLog.Text += Environment.NewLine + textBoxTxBufferHEX.Text;
+                textBoxTxBufferHEXLog.AppendText(textBoxTxBufferHEX.Text + Environment.NewLine);
             }
         }
 

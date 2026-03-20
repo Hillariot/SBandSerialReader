@@ -282,6 +282,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxTxBufferHEXLog = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxTxBufferASCII = new System.Windows.Forms.TextBox();
@@ -296,14 +297,13 @@
             this.textBoxRxBufferHEX = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SendButton = new System.Windows.Forms.Button();
+            this.textBoxSendData = new System.Windows.Forms.TextBox();
             this.labelServerStatus = new System.Windows.Forms.Label();
             this.labelServerTransmitted = new System.Windows.Forms.Label();
             this.labelServerReceived = new System.Windows.Forms.Label();
             this.buttonCloseConnect = new System.Windows.Forms.Button();
             this.buttonOpenConnect = new System.Windows.Forms.Button();
-            this.SendButton = new System.Windows.Forms.Button();
-            this.textBoxSendData = new System.Windows.Forms.TextBox();
-            this.textBoxTxBufferHEXLog = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDataBits)).BeginInit();
@@ -3224,6 +3224,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buffers";
             // 
+            // textBoxTxBufferHEXLog
+            // 
+            this.textBoxTxBufferHEXLog.Location = new System.Drawing.Point(56, 195);
+            this.textBoxTxBufferHEXLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxTxBufferHEXLog.Multiline = true;
+            this.textBoxTxBufferHEXLog.Name = "textBoxTxBufferHEXLog";
+            this.textBoxTxBufferHEXLog.ReadOnly = true;
+            this.textBoxTxBufferHEXLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTxBufferHEXLog.Size = new System.Drawing.Size(337, 103);
+            this.textBoxTxBufferHEXLog.TabIndex = 13;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -3334,6 +3345,7 @@
             this.textBoxRxBufferHEX.Multiline = true;
             this.textBoxRxBufferHEX.Name = "textBoxRxBufferHEX";
             this.textBoxRxBufferHEX.ReadOnly = true;
+            this.textBoxRxBufferHEX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxRxBufferHEX.Size = new System.Drawing.Size(335, 98);
             this.textBoxRxBufferHEX.TabIndex = 0;
             // 
@@ -3364,6 +3376,26 @@
             this.groupBox4.TabIndex = 176;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Server";
+            // 
+            // SendButton
+            // 
+            this.SendButton.Location = new System.Drawing.Point(308, 123);
+            this.SendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(83, 22);
+            this.SendButton.TabIndex = 6;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            // 
+            // textBoxSendData
+            // 
+            this.textBoxSendData.Location = new System.Drawing.Point(6, 123);
+            this.textBoxSendData.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSendData.Multiline = true;
+            this.textBoxSendData.Name = "textBoxSendData";
+            this.textBoxSendData.Size = new System.Drawing.Size(293, 21);
+            this.textBoxSendData.TabIndex = 5;
             // 
             // labelServerStatus
             // 
@@ -3413,36 +3445,6 @@
             this.buttonOpenConnect.Text = "Open connection";
             this.buttonOpenConnect.UseVisualStyleBackColor = true;
             this.buttonOpenConnect.Click += new System.EventHandler(this.buttonOpenConnect_Click);
-            // 
-            // SendButton
-            // 
-            this.SendButton.Location = new System.Drawing.Point(308, 123);
-            this.SendButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SendButton.Name = "SendButton";
-            this.SendButton.Size = new System.Drawing.Size(83, 22);
-            this.SendButton.TabIndex = 6;
-            this.SendButton.Text = "Send";
-            this.SendButton.UseVisualStyleBackColor = true;
-            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
-            // 
-            // textBoxSendData
-            // 
-            this.textBoxSendData.Location = new System.Drawing.Point(6, 123);
-            this.textBoxSendData.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxSendData.Multiline = true;
-            this.textBoxSendData.Name = "textBoxSendData";
-            this.textBoxSendData.Size = new System.Drawing.Size(293, 21);
-            this.textBoxSendData.TabIndex = 5;
-            // 
-            // textBoxTxBufferHEXLog
-            // 
-            this.textBoxTxBufferHEXLog.Location = new System.Drawing.Point(56, 195);
-            this.textBoxTxBufferHEXLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxTxBufferHEXLog.Multiline = true;
-            this.textBoxTxBufferHEXLog.Name = "textBoxTxBufferHEXLog";
-            this.textBoxTxBufferHEXLog.ReadOnly = true;
-            this.textBoxTxBufferHEXLog.Size = new System.Drawing.Size(337, 103);
-            this.textBoxTxBufferHEXLog.TabIndex = 13;
             // 
             // Form1
             // 
