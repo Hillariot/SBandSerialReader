@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
@@ -213,7 +214,7 @@ namespace SBandSerialReader
 
             // Здесь ты уже в UI-потоке
             ReceivedPackets++;
-            labelServerReceived.Text = "Сообщений принято: " + ReceivedPackets;
+            labelServerReceived.Text = "Messages received: " + ReceivedPackets;
             WriteTxBuffer(data);
         }
 
@@ -230,8 +231,76 @@ namespace SBandSerialReader
         public void OnPortDisconnected()
         {
             pictureBox1.BackColor = Color.OrangeRed;
-            buttonConnectComPort.Text = "Подключиться";
-            labelConnectionStatus.Text = "Отключён";
+            buttonConnectComPort.Text = "Connect";
+            labelConnectionStatus.Text = "Disconnected";
+
+            for(int i = 0; i < HexValueControls.Length; i++)
+            {
+                Control control = HexValueControls[i];
+
+                if (control is System.Windows.Forms.TextBox)
+                {
+                    ((System.Windows.Forms.TextBox)control).Text = "";
+                }
+                else if (control is System.Windows.Forms.ComboBox)
+                {
+                    ((System.Windows.Forms.ComboBox)control).SelectedIndex = 0;
+                }
+                else if (control is System.Windows.Forms.GroupBox)
+                {
+                    foreach (Control c in ((System.Windows.Forms.GroupBox)control).Controls)
+                    {
+                        if (c is System.Windows.Forms.CheckBox)
+                        {
+                            ((System.Windows.Forms.CheckBox)c).Checked = false;
+                        }
+                        else if (c is System.Windows.Forms.GroupBox)
+                        {
+                            foreach (Control cc in ((System.Windows.Forms.GroupBox)c).Controls)
+                            {
+                                if (c is System.Windows.Forms.RadioButton)
+                                {
+                                    ((System.Windows.Forms.RadioButton)cc).Checked = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < VarDataControls.Length; i++)
+            {
+                Control control = VarDataControls[i];
+
+                if (control is System.Windows.Forms.TextBox)
+                {
+                    ((System.Windows.Forms.TextBox)control).Text = "";
+                }
+                else if (control is System.Windows.Forms.ComboBox)
+                {
+                    ((System.Windows.Forms.ComboBox)control).SelectedIndex = 0;
+                }
+                else if (control is System.Windows.Forms.GroupBox)
+                {
+                    foreach (Control c in ((System.Windows.Forms.GroupBox)control).Controls)
+                    {
+                        if (c is System.Windows.Forms.CheckBox)
+                        {
+                            ((System.Windows.Forms.CheckBox)c).Checked = false;
+                        }
+                        else if (c is System.Windows.Forms.GroupBox)
+                        {
+                            foreach (Control cc in ((System.Windows.Forms.GroupBox)c).Controls)
+                            {
+                                if (c is System.Windows.Forms.RadioButton)
+                                {
+                                    ((System.Windows.Forms.RadioButton)cc).Checked = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         public void WriteRegsAsync(byte startReg, byte[] regs)
         {
@@ -266,7 +335,7 @@ namespace SBandSerialReader
                     await server.SendAsync(id, data);
 
                 SentPackets++;
-                labelServerTransmitted.Text = "Сообщений отправлено: " + SentPackets;
+                labelServerTransmitted.Text = "Messages sent: " + SentPackets;
             }
         }
 
@@ -335,21 +404,25 @@ namespace SBandSerialReader
                     readingThread.Start();
 
                     pictureBox1.BackColor = Color.Green;
-                    buttonConnectComPort.Text = "Отключиться";
-                    labelConnectionStatus.Text = "Подключён к " + serialPort.PortName;
+                    buttonConnectComPort.Text = "Disconnect";
+                    labelConnectionStatus.Text = "Connected to " + serialPort.PortName;
+
+                    byte[] read = CommandGenerator.RegisterRead(deviceAddress, 0, 43);
+                    if (serialPort.IsOpen)
+                    {
+                        serialPort.Write(read, 0, read.Length);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Не выбран COM Port!");
+                    MessageBox.Show("COM Port not selected!");
                 }
             }
             else
             {
                 serialPort.Close();
 
-                pictureBox1.BackColor = Color.OrangeRed;
-                buttonConnectComPort.Text = "Подключиться";
-                labelConnectionStatus.Text = "Отключён";
+                OnPortDisconnected();
             }
         }
 
@@ -616,6 +689,7 @@ namespace SBandSerialReader
             if (serialPort.IsOpen)
             {
                 serialPort.Write(write, 0, write.Length);
+                textBoxTxBufferHEXLog.Text += Environment.NewLine + textBoxTxBufferHEX.Text;
             }
         }
 
@@ -1425,13 +1499,13 @@ namespace SBandSerialReader
         private async void buttonOpenConnect_Click(object sender, EventArgs e)
         {
             await server.StartAsync("127.0.0.1", 8924);
-            labelServerStatus.Text = "Сервер включён";
+            labelServerStatus.Text = "Server connected";
         }
 
         private void buttonCloseConnect_Click(object sender, EventArgs e)
         {
             server.Stop();
-            labelServerStatus.Text = "Сервер отключён";
+            labelServerStatus.Text = "Server disconnected";
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -1898,7 +1972,7 @@ namespace SBandSerialReader
         {
             if (_outputCliendId == -1)
             {
-                MessageBox.Show("Клиент не подключён");
+                MessageBox.Show("Client not connected");
                 return;
             }
 

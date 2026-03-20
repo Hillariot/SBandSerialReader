@@ -296,13 +296,14 @@
             this.textBoxRxBufferHEX = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.SendButton = new System.Windows.Forms.Button();
-            this.textBoxSendData = new System.Windows.Forms.TextBox();
             this.labelServerStatus = new System.Windows.Forms.Label();
             this.labelServerTransmitted = new System.Windows.Forms.Label();
             this.labelServerReceived = new System.Windows.Forms.Label();
             this.buttonCloseConnect = new System.Windows.Forms.Button();
             this.buttonOpenConnect = new System.Windows.Forms.Button();
+            this.SendButton = new System.Windows.Forms.Button();
+            this.textBoxSendData = new System.Windows.Forms.TextBox();
+            this.textBoxTxBufferHEXLog = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDataBits)).BeginInit();
@@ -348,7 +349,7 @@
             this.groupBox1.Size = new System.Drawing.Size(400, 248);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Настройка COM порта";
+            this.groupBox1.Text = "COM port settings";
             // 
             // button6
             // 
@@ -399,7 +400,7 @@
             this.buttonRefreshPorts.Name = "buttonRefreshPorts";
             this.buttonRefreshPorts.Size = new System.Drawing.Size(104, 33);
             this.buttonRefreshPorts.TabIndex = 11;
-            this.buttonRefreshPorts.Text = "Обновить";
+            this.buttonRefreshPorts.Text = "Update";
             this.buttonRefreshPorts.UseVisualStyleBackColor = true;
             this.buttonRefreshPorts.Click += new System.EventHandler(this.buttonRefreshPorts_Click);
             // 
@@ -515,18 +516,18 @@
             this.labelConnectionStatus.AutoSize = true;
             this.labelConnectionStatus.Location = new System.Drawing.Point(243, 79);
             this.labelConnectionStatus.Name = "labelConnectionStatus";
-            this.labelConnectionStatus.Size = new System.Drawing.Size(109, 16);
+            this.labelConnectionStatus.Size = new System.Drawing.Size(94, 16);
             this.labelConnectionStatus.TabIndex = 1;
-            this.labelConnectionStatus.Text = "Не подключено";
+            this.labelConnectionStatus.Text = "Not connected";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(5, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Порт:";
+            this.label1.Text = "Port:";
             // 
             // groupBox3
             // 
@@ -685,7 +686,7 @@
             this.groupBox3.Size = new System.Drawing.Size(1013, 1074);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Вывод данных";
+            this.groupBox3.Text = "Registers map";
             // 
             // groupBoxRow22Data
             // 
@@ -1143,7 +1144,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(589, 1030);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 28);
             this.button5.TabIndex = 213;
@@ -1612,7 +1613,7 @@
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(584, 620);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 181;
@@ -1703,7 +1704,7 @@
             // buttonSetFrequency
             // 
             this.buttonSetFrequency.Location = new System.Drawing.Point(584, 480);
-            this.buttonSetFrequency.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSetFrequency.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSetFrequency.Name = "buttonSetFrequency";
             this.buttonSetFrequency.Size = new System.Drawing.Size(100, 28);
             this.buttonSetFrequency.TabIndex = 172;
@@ -1716,13 +1717,13 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(576, 231);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(108, 16);
+            this.label25.Size = new System.Drawing.Size(116, 16);
             this.label25.TabIndex = 171;
-            this.label25.Text = "Длина первого:";
+            this.label25.Text = "First message len:";
             // 
             // textBoxRow6Data2
             // 
-            this.textBoxRow6Data2.Location = new System.Drawing.Point(692, 228);
+            this.textBoxRow6Data2.Location = new System.Drawing.Point(698, 228);
             this.textBoxRow6Data2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRow6Data2.Name = "textBoxRow6Data2";
             this.textBoxRow6Data2.ReadOnly = true;
@@ -1734,13 +1735,13 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(576, 203);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(108, 16);
+            this.label26.Size = new System.Drawing.Size(116, 16);
             this.label26.TabIndex = 169;
-            this.label26.Text = "Длина первого:";
+            this.label26.Text = "First message len:";
             // 
             // textBoxRow5Data2
             // 
-            this.textBoxRow5Data2.Location = new System.Drawing.Point(692, 199);
+            this.textBoxRow5Data2.Location = new System.Drawing.Point(698, 199);
             this.textBoxRow5Data2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRow5Data2.Name = "textBoxRow5Data2";
             this.textBoxRow5Data2.ReadOnly = true;
@@ -1752,18 +1753,18 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(407, 231);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(84, 16);
+            this.label24.Size = new System.Drawing.Size(74, 16);
             this.label24.TabIndex = 166;
-            this.label24.Text = "Сообщений:";
+            this.label24.Text = "Messages:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(407, 203);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(84, 16);
+            this.label18.Size = new System.Drawing.Size(74, 16);
             this.label18.TabIndex = 165;
-            this.label18.Text = "Сообщений:";
+            this.label18.Text = "Messages:";
             // 
             // groupBoxRow9Data
             // 
@@ -3138,9 +3139,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(404, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 16);
+            this.label9.Size = new System.Drawing.Size(99, 16);
             this.label9.TabIndex = 6;
-            this.label9.Text = "Расшифровка";
+            this.label9.Text = "Converted data";
             // 
             // pictureBox4
             // 
@@ -3157,9 +3158,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(224, 26);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 16);
+            this.label8.Size = new System.Drawing.Size(70, 16);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Значение";
+            this.label8.Text = "HEX value";
             // 
             // pictureBox3
             // 
@@ -3176,9 +3177,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(104, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 16);
+            this.label7.Size = new System.Drawing.Size(75, 16);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Название";
+            this.label7.Text = "Description";
             // 
             // pictureBox2
             // 
@@ -3195,12 +3196,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(5, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.Size = new System.Drawing.Size(83, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "№ Регистра";
+            this.label2.Text = "№ of register";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxTxBufferHEXLog);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.textBoxTxBufferASCII);
@@ -3217,15 +3219,15 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(400, 373);
+            this.groupBox2.Size = new System.Drawing.Size(400, 406);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Буферы";
+            this.groupBox2.Text = "Buffers";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 294);
+            this.label14.Location = new System.Drawing.Point(7, 334);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(43, 16);
             this.label14.TabIndex = 12;
@@ -3234,7 +3236,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 266);
+            this.label15.Location = new System.Drawing.Point(7, 306);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 16);
             this.label15.TabIndex = 11;
@@ -3242,7 +3244,7 @@
             // 
             // textBoxTxBufferASCII
             // 
-            this.textBoxTxBufferASCII.Location = new System.Drawing.Point(58, 291);
+            this.textBoxTxBufferASCII.Location = new System.Drawing.Point(56, 331);
             this.textBoxTxBufferASCII.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTxBufferASCII.Name = "textBoxTxBufferASCII";
             this.textBoxTxBufferASCII.Size = new System.Drawing.Size(337, 22);
@@ -3252,7 +3254,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 164);
+            this.label13.Location = new System.Drawing.Point(8, 127);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 16);
             this.label13.TabIndex = 9;
@@ -3260,7 +3262,7 @@
             // 
             // textBoxRxBufferASCII
             // 
-            this.textBoxRxBufferASCII.Location = new System.Drawing.Point(58, 161);
+            this.textBoxRxBufferASCII.Location = new System.Drawing.Point(60, 121);
             this.textBoxRxBufferASCII.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRxBufferASCII.Name = "textBoxRxBufferASCII";
             this.textBoxRxBufferASCII.ReadOnly = true;
@@ -3278,38 +3280,38 @@
             // 
             // buttonWriteTxBuffer
             // 
-            this.buttonWriteTxBuffer.Location = new System.Drawing.Point(5, 317);
+            this.buttonWriteTxBuffer.Location = new System.Drawing.Point(6, 358);
             this.buttonWriteTxBuffer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonWriteTxBuffer.Name = "buttonWriteTxBuffer";
-            this.buttonWriteTxBuffer.Size = new System.Drawing.Size(164, 49);
+            this.buttonWriteTxBuffer.Size = new System.Drawing.Size(164, 40);
             this.buttonWriteTxBuffer.TabIndex = 6;
-            this.buttonWriteTxBuffer.Text = "Записать TX буфер";
+            this.buttonWriteTxBuffer.Text = "Write TX buffer";
             this.buttonWriteTxBuffer.UseVisualStyleBackColor = true;
             this.buttonWriteTxBuffer.Click += new System.EventHandler(this.buttonWriteTxBuffer_Click);
             // 
             // buttonReadRxBuffer
             // 
-            this.buttonReadRxBuffer.Location = new System.Drawing.Point(6, 187);
+            this.buttonReadRxBuffer.Location = new System.Drawing.Point(5, 147);
             this.buttonReadRxBuffer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonReadRxBuffer.Name = "buttonReadRxBuffer";
-            this.buttonReadRxBuffer.Size = new System.Drawing.Size(164, 49);
+            this.buttonReadRxBuffer.Size = new System.Drawing.Size(164, 40);
             this.buttonReadRxBuffer.TabIndex = 4;
-            this.buttonReadRxBuffer.Text = "Прочитать RX буфер";
+            this.buttonReadRxBuffer.Text = "Read RX buffer";
             this.buttonReadRxBuffer.UseVisualStyleBackColor = true;
             this.buttonReadRxBuffer.Click += new System.EventHandler(this.buttonReadRxBuffer_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 244);
+            this.label11.Location = new System.Drawing.Point(9, 200);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 16);
+            this.label11.Size = new System.Drawing.Size(24, 16);
             this.label11.TabIndex = 3;
-            this.label11.Text = "TX буфер:";
+            this.label11.Text = "TX";
             // 
             // textBoxTxBufferHEX
             // 
-            this.textBoxTxBufferHEX.Location = new System.Drawing.Point(58, 262);
+            this.textBoxTxBufferHEX.Location = new System.Drawing.Point(56, 302);
             this.textBoxTxBufferHEX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTxBufferHEX.Name = "textBoxTxBufferHEX";
             this.textBoxTxBufferHEX.Size = new System.Drawing.Size(337, 22);
@@ -3321,18 +3323,18 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(5, 28);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.Size = new System.Drawing.Size(25, 16);
             this.label10.TabIndex = 1;
-            this.label10.Text = "RX буфер:";
+            this.label10.Text = "RX";
             // 
             // textBoxRxBufferHEX
             // 
-            this.textBoxRxBufferHEX.Location = new System.Drawing.Point(58, 44);
+            this.textBoxRxBufferHEX.Location = new System.Drawing.Point(60, 19);
             this.textBoxRxBufferHEX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxRxBufferHEX.Multiline = true;
             this.textBoxRxBufferHEX.Name = "textBoxRxBufferHEX";
             this.textBoxRxBufferHEX.ReadOnly = true;
-            this.textBoxRxBufferHEX.Size = new System.Drawing.Size(335, 110);
+            this.textBoxRxBufferHEX.Size = new System.Drawing.Size(335, 98);
             this.textBoxRxBufferHEX.TabIndex = 0;
             // 
             // panel1
@@ -3354,65 +3356,45 @@
             this.groupBox4.Controls.Add(this.labelServerReceived);
             this.groupBox4.Controls.Add(this.buttonCloseConnect);
             this.groupBox4.Controls.Add(this.buttonOpenConnect);
-            this.groupBox4.Location = new System.Drawing.Point(13, 641);
+            this.groupBox4.Location = new System.Drawing.Point(13, 674);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox4.Size = new System.Drawing.Size(400, 193);
+            this.groupBox4.Size = new System.Drawing.Size(400, 157);
             this.groupBox4.TabIndex = 176;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Сервер";
-            // 
-            // SendButton
-            // 
-            this.SendButton.Location = new System.Drawing.Point(309, 123);
-            this.SendButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.SendButton.Name = "SendButton";
-            this.SendButton.Size = new System.Drawing.Size(83, 55);
-            this.SendButton.TabIndex = 6;
-            this.SendButton.Text = "Send";
-            this.SendButton.UseVisualStyleBackColor = true;
-            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
-            // 
-            // textBoxSendData
-            // 
-            this.textBoxSendData.Location = new System.Drawing.Point(7, 123);
-            this.textBoxSendData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxSendData.Multiline = true;
-            this.textBoxSendData.Name = "textBoxSendData";
-            this.textBoxSendData.Size = new System.Drawing.Size(293, 54);
-            this.textBoxSendData.TabIndex = 5;
+            this.groupBox4.Text = "Server";
             // 
             // labelServerStatus
             // 
             this.labelServerStatus.AutoSize = true;
-            this.labelServerStatus.Location = new System.Drawing.Point(175, 22);
+            this.labelServerStatus.Location = new System.Drawing.Point(176, 22);
             this.labelServerStatus.Name = "labelServerStatus";
-            this.labelServerStatus.Size = new System.Drawing.Size(123, 16);
+            this.labelServerStatus.Size = new System.Drawing.Size(134, 16);
             this.labelServerStatus.TabIndex = 4;
-            this.labelServerStatus.Text = "Сервер отключён";
+            this.labelServerStatus.Text = "Server not connected";
             // 
             // labelServerTransmitted
             // 
             this.labelServerTransmitted.AutoSize = true;
-            this.labelServerTransmitted.Location = new System.Drawing.Point(173, 96);
+            this.labelServerTransmitted.Location = new System.Drawing.Point(174, 96);
             this.labelServerTransmitted.Name = "labelServerTransmitted";
-            this.labelServerTransmitted.Size = new System.Drawing.Size(176, 16);
+            this.labelServerTransmitted.Size = new System.Drawing.Size(112, 16);
             this.labelServerTransmitted.TabIndex = 3;
-            this.labelServerTransmitted.Text = "Сообщений отправлено: 0";
+            this.labelServerTransmitted.Text = "Messages sent: 0";
             // 
             // labelServerReceived
             // 
             this.labelServerReceived.AutoSize = true;
-            this.labelServerReceived.Location = new System.Drawing.Point(173, 80);
+            this.labelServerReceived.Location = new System.Drawing.Point(174, 80);
             this.labelServerReceived.Name = "labelServerReceived";
-            this.labelServerReceived.Size = new System.Drawing.Size(151, 16);
+            this.labelServerReceived.Size = new System.Drawing.Size(140, 16);
             this.labelServerReceived.TabIndex = 2;
-            this.labelServerReceived.Text = "Сообщений принято: 0";
+            this.labelServerReceived.Text = "Messages received: 0";
             // 
             // buttonCloseConnect
             // 
-            this.buttonCloseConnect.Location = new System.Drawing.Point(5, 70);
+            this.buttonCloseConnect.Location = new System.Drawing.Point(6, 70);
             this.buttonCloseConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCloseConnect.Name = "buttonCloseConnect";
             this.buttonCloseConnect.Size = new System.Drawing.Size(164, 47);
@@ -3423,7 +3405,7 @@
             // 
             // buttonOpenConnect
             // 
-            this.buttonOpenConnect.Location = new System.Drawing.Point(5, 21);
+            this.buttonOpenConnect.Location = new System.Drawing.Point(6, 21);
             this.buttonOpenConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonOpenConnect.Name = "buttonOpenConnect";
             this.buttonOpenConnect.Size = new System.Drawing.Size(164, 47);
@@ -3431,6 +3413,36 @@
             this.buttonOpenConnect.Text = "Open connection";
             this.buttonOpenConnect.UseVisualStyleBackColor = true;
             this.buttonOpenConnect.Click += new System.EventHandler(this.buttonOpenConnect_Click);
+            // 
+            // SendButton
+            // 
+            this.SendButton.Location = new System.Drawing.Point(308, 123);
+            this.SendButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(83, 22);
+            this.SendButton.TabIndex = 6;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            // 
+            // textBoxSendData
+            // 
+            this.textBoxSendData.Location = new System.Drawing.Point(6, 123);
+            this.textBoxSendData.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSendData.Multiline = true;
+            this.textBoxSendData.Name = "textBoxSendData";
+            this.textBoxSendData.Size = new System.Drawing.Size(293, 21);
+            this.textBoxSendData.TabIndex = 5;
+            // 
+            // textBoxTxBufferHEXLog
+            // 
+            this.textBoxTxBufferHEXLog.Location = new System.Drawing.Point(56, 195);
+            this.textBoxTxBufferHEXLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxTxBufferHEXLog.Multiline = true;
+            this.textBoxTxBufferHEXLog.Name = "textBoxTxBufferHEXLog";
+            this.textBoxTxBufferHEXLog.ReadOnly = true;
+            this.textBoxTxBufferHEXLog.Size = new System.Drawing.Size(337, 103);
+            this.textBoxTxBufferHEXLog.TabIndex = 13;
             // 
             // Form1
             // 
@@ -3755,6 +3767,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button SendButton;
         private System.Windows.Forms.TextBox textBoxSendData;
+        private System.Windows.Forms.TextBox textBoxTxBufferHEXLog;
     }
 }
 
